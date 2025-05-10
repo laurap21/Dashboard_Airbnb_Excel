@@ -96,9 +96,17 @@ El archivo cuenta con **79 columnas**, de las cuales se van a emplear **X**. El 
 
 Finalmente, tras el análisis inicial de los datos, la tabla con los datos a analizar consta de **X columnas**.
 
-#### Tratamiento de datos: unificación de valore, eliminación de valores nulos y registros duplicados
-1.	No hay valores duplicados por anuncio. Por ID de Host, en cambio, sí, ya que un mismo host puede tener varios anuncios.
-2.	Filtro por *host_since*: existen valores nulos que se van a eliminar, ya que no suponen una muestra de datos representativa frente al total (19 frente a 25.289, es decir, un 0,07 %). Además, se observa que no disponen de información sobre el host, solo sobre el alojamiento.
-3.	Filtro por *host_location*: unificar opciones. Solo coger el valor del país, hay gran variedad, incluso diferenciados por estados para el caso de Estados Unidos.
+
+#### Tratamiento de datos: unificación de valores, eliminación de valores nulos y registros duplicados
+1. **Revisión de encabezados**: se incluyen notas aclaratorias de los encabezados necesarios. También se corrigen los nombres de forma que queden más visuales y explicativos. 
+2. **Revisión de valores duplicados**: 
+    - No hay valores duplicados por anuncio (Primary Key). 
+    - En cambio, por ID de Host sí hay, ya que un mismo host puede tener varios anuncios.
+3. **Revisión de valores nulos** :
+    - La primera columna con valores nulos es *host_since*: existen valores nulos que se van a eliminar, ya que no suponen una muestra de datos representativa frente al total (19 frente a 25.289, es decir, un 0,07 %). Además, se observa que estas filas tampoco disponen de información sobre el host.
+4.	**Unificación de valores**: 
+    - En la columna *host_location* se observa gran variedad de localizaciones. El valor significativo para el análisis es solo el país, por lo que se crea la columna *Host_location2* para unificar y limpiar los valores utilizando distintas fórmulas de Excel. En los valores en blanco se indica "Desconocido".
+    - De igual manera, en la columna **Superhost** se ha incluido el valor "d" (desconocido) para los espacios en blanco.
+
 
 #### Filtros por disponibilidad y tipo de alojamiento
