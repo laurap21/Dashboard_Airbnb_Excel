@@ -114,5 +114,8 @@ Para la limpieza de los datos, se ha analizado columna a columna la calidad de l
     - Se ha añadido el valor "Unknown" en las columnas *Bedrooms* y *Beds* en las filas que no contenían ningún valor.
     - En la columna *Price* se ha eliminado el símbolo del dólar, se ha reemplazado el punto por una coma y se ha específicado en el formato de la celda que son $.
 
+    ESTO ES UNA PRUEBA 2
+
+
 
 #### Filtros por disponibilidad y tipo de alojamiento
