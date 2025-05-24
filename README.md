@@ -97,7 +97,8 @@ El archivo cuenta con **79 columnas**, de las cuales se van a emplear **X**. El 
 Finalmente, tras el análisis inicial de los datos, la tabla con los datos a analizar consta de **X columnas**.
 
 
-#### Tratamiento de datos: unificación de valores, eliminación de valores nulos y registros duplicados
+#### Tratamiento de datos: unificación de valores, eliminación de valores nulos y registros duplicados - Revisión de columnas.
+Para la limpieza de los datos, se ha analizado columna a columna la calidad de los mismos realizando, según sea necesario, las siguientes actuaciones:
 1. **Revisión de encabezados**: se incluyen notas aclaratorias de los encabezados necesarios. También se corrigen los nombres de forma que queden más visuales y explicativos. 
 2. **Revisión de valores duplicados**: 
     - No hay valores duplicados por anuncio (Primary Key). 
@@ -105,8 +106,13 @@ Finalmente, tras el análisis inicial de los datos, la tabla con los datos a ana
 3. **Revisión de valores nulos** :
     - La primera columna con valores nulos es *host_since*: existen valores nulos que se van a eliminar, ya que no suponen una muestra de datos representativa frente al total (19 frente a 25.289, es decir, un 0,07 %). Además, se observa que estas filas tampoco disponen de información sobre el host.
 4.	**Unificación de valores**: 
-    - En la columna *host_location* se observa gran variedad de localizaciones. El valor significativo para el análisis es solo el país, por lo que se crea la columna *Host_location2* para unificar y limpiar los valores utilizando distintas fórmulas de Excel. En los valores en blanco se indica "Desconocido".
-    - De igual manera, en la columna **Superhost** se ha incluido el valor "d" (desconocido) para los espacios en blanco.
+    - En la columna *host_location_initial* se observa gran variedad de localizaciones. El valor significativo para el análisis es solo el país, por lo que se crea la columna *Host_location* para unificar y limpiar los valores utilizando distintas fórmulas de Excel. En los valores en blanco se indica "Desconocido".
+    - La columna *host_verification_initial* contiene información sobre los métodos de verificación de cada host. Se ha hecho una limpieza visual de los datos, eliminando los corchetes y las comillas y creando una nueva columna *Host_verification". También se ha añadido el valor "no verification" en las casillas vacías.
+    - En la columna *Superhost* se ha incluido el valor "d" (desconocido) para los espacios en blanco.
+    - Se ha dividido el valor de la columna "Bathrooms" entre 10, de acuerdo a la explicación inicial de la columna en la que, por ejemplo, el valor 10 indica 1 baño y el valor 15 un baño y un aseo, es decir, 1,5 baños. Para mostrarlo, se ha creado la columna *Num. Bathrooms*.
+    - La columna *Bathrooms_text* amplía la información del número de baños indicando además si son compartidos o privados. En la columna *Shared_bathrooms* se ha extraído esta información complementaria.
+    - Se ha añadido el valor "Unknown" en las columnas *Bedrooms* y *Beds* en las filas que no contenían ningún valor.
+    - En la columna *Price* se ha eliminado el símbolo del dólar, se ha reemplazado el punto por una coma y se ha específicado en el formato de la celda que son $.
 
 
 #### Filtros por disponibilidad y tipo de alojamiento
