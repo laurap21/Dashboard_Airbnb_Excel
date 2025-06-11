@@ -94,7 +94,7 @@ Se trata de un archivo de 79 columnas y 25.289 filas con información sobre los 
 #### Eliminación de columnas irrelevantes
 El archivo cuenta con **79 columnas**, de las cuales se van a emplear **X**. El resto han sido descartadas ya que no aportan valor real al análisis, como las columnas relativas al propio anuncio en la web (*listing_url*, *name*, *description*, *picture_url*, *host_url*, *host_name*, *host_thumbnail_url*, *host_picture_url*, *host_verifications*, *host_identity_verified*, etc.).
 
-Finalmente, tras el análisis inicial de los datos, la tabla con los datos a analizar consta de **X columnas**.
+Finalmente, tras el análisis inicial de los datos, la tabla con los datos a analizar consta de **29 columnas**.
 
 
 #### Tratamiento de datos: unificación de valores, eliminación de valores nulos y registros duplicados - Revisión de columnas.
@@ -112,10 +112,45 @@ Para la limpieza de los datos, se ha analizado columna a columna la calidad de l
     - Se ha dividido el valor de la columna "Bathrooms" entre 10, de acuerdo a la explicación inicial de la columna en la que, por ejemplo, el valor 10 indica 1 baño y el valor 15 un baño y un aseo, es decir, 1,5 baños. Para mostrarlo, se ha creado la columna *Num. Bathrooms*.
     - La columna *Bathrooms_text* amplía la información del número de baños indicando además si son compartidos o privados. En la columna *Shared_bathrooms* se ha extraído esta información complementaria.
     - Se ha añadido el valor "Unknown" en las columnas *Bedrooms* y *Beds* en las filas que no contenían ningún valor.
-    - En la columna *Price* se ha eliminado el símbolo del dólar, se ha reemplazado el punto por una coma y se ha específicado en el formato de la celda que son $.
+    - En la columna *Price* se ha eliminado el símbolo del dólar, se ha reemplazado el punto por una coma y se ha específicado en el formato de la celda que son euros (€), ya que de acuerdo con la descripción de los datos esta corresponde a "daily price in local currency".
+    - En la columna *Host_verifications* se han eliminado los corchetes y las comillas para dejar el texto más limpio. Se ha añadido el texto "no verifications" en las casillas vacías.
+5. **Revisión de valores atípicos y clasificación de valores en categorías**
+    - En las columnas relativas a las noches mínimas o máximas que permite el anfitrión se va a seguir el siguiente criterio:
+        - En la columna *minimum_nights* se aceptan como valores válidos de 1 a 365. Los valores por encima de 365 se consideran atípicos. Se ha supuesto que el anfitrión hace uso de estos valores para bloquear la posibilidad de alquilar el alojamiento en el momento del scraping.
+        Para analizar de manera más sencilla estos valores, tras la limpieza de los datos, se va a dividir según el número de noches mínimas en:
 
-    ESTO ES UNA PRUEBA 2
+            | Num. Noches     | Categoría                 |
+            |-----------------|---------------------------|
+            | 1 - 3           | Very short stay           |
+            | 4 - 7           | Short stay                |
+            | 8 - 14          | Medium stay               |
+            | 15 - 29         | Long stay                 |
+            | 30 - 89         | Monthly rental            |
+            | 90 - 365        | Extended temporary rental |
+            | 365 o más       | Blocked rental            |
 
 
+        - De igual manera, en la columna *maximum_nights* se consideran válidos los valores hasta 365. Los valores por encima de 365 se consideran atípicos. En este caso no van a ser eliminados, ya que se asume que el anfitrión ha elegido poner un número de noches máximas por encima del año para no limitar el alquiler de su alojamiento. Estos valores se utilizarán para suponer a qué tipo de alquiler está orientado el alojamiento:
 
-#### Filtros por disponibilidad y tipo de alojamiento
+            | Num. Noches     | Categoría                    |
+            |-----------------|------------------------------|
+            | 1 - 7           | Short stay only              |
+            | 8 - 29          | Short to medium stay         |
+            | 30 - 89         | Medium stay (up to 3 months) |
+            | 90 - 365        | Long stay (up to 1 year)     |
+            | 365 o más       | No real limit                |
+
+    - De las diferentes opciones de disponibilidad del alojamiento, se va a emplear solamente la columna *availability_365* en este análisis. En función de la disponiblidad indicada en esta columna, se han creado las siguientes categorías:
+
+        | Num. Noches     | Categoría             |
+        |-----------------|-----------------------|
+        | 0               | Not available         |
+        | 1 - 89          | Low availability      |
+        | 90 - 179        | Medium availability   |
+        | 180 - 365       | High availability     |
+        | 365 o más       | Fully available       |
+
+
+El resto de columnas se ha eliminado del fichero, pues no se van a utilizar en este análisis porque no aportan información significativa o porque la información está incompleta.
+
+Por otra parte, se han dejado casillas vacías en las columnas "Bedrooms", "Beds" y "Price_€" para el posterior análisis. Los datos vacíos de esta columna se tratarán más adelante como "no information" para las estadísticas de los anuncios.
