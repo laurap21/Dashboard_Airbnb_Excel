@@ -99,22 +99,22 @@ Finalmente, tras el análisis inicial de los datos, la tabla con los datos a ana
 
 #### Tratamiento de datos: unificación de valores, eliminación de valores nulos y registros duplicados - Revisión de columnas.
 Para la limpieza de los datos, se ha analizado columna a columna la calidad de los mismos realizando, según sea necesario, las siguientes actuaciones:
-1. **Revisión de encabezados**: se incluyen notas aclaratorias de los encabezados necesarios. También se corrigen los nombres de forma que queden más visuales y explicativos. 
+1. **Revisión de encabezados**: se corrigen los nombres de forma que queden más visuales y explicativos. 
 2. **Revisión de valores duplicados**: 
     - No hay valores duplicados por anuncio (Primary Key). 
     - En cambio, por ID de Host sí hay, ya que un mismo host puede tener varios anuncios.
-3. **Revisión de valores nulos** :
-    - La primera columna con valores nulos es *host_since*: existen valores nulos que se van a eliminar, ya que no suponen una muestra de datos representativa frente al total (19 frente a 25.289, es decir, un 0,07 %). Además, se observa que estas filas tampoco disponen de información sobre el host.
+3. **Revisión de valores nulos/vacíos** :
+    - La primera columna con valores nulos es *host_since*: existen valores vacíos que se van a eliminar, ya que no suponen una muestra de datos representativa frente al total (19 frente a 25.289, es decir, un 0,07 %). Además, se observa que estas filas tampoco disponen de información sobre el host.
+    - Se han dejado casillas vacías en las columnas "Bedrooms", "Beds" y "Price_€" para el posterior análisis. Los datos vacíos de esta columna se tratarán más adelante como "no information" para las estadísticas de los anuncios.
 4.	**Unificación de valores**: 
     - En la columna *host_location_initial* se observa gran variedad de localizaciones. El valor significativo para el análisis es solo el país, por lo que se crea la columna *Host_location* para unificar y limpiar los valores utilizando distintas fórmulas de Excel. En los valores en blanco se indica "Desconocido".
     - La columna *host_verification_initial* contiene información sobre los métodos de verificación de cada host. Se ha hecho una limpieza visual de los datos, eliminando los corchetes y las comillas y creando una nueva columna *Host_verification". También se ha añadido el valor "no verification" en las casillas vacías.
-    - En la columna *Superhost* se ha incluido el valor "d" (desconocido) para los espacios en blanco.
+    - En la columna *Superhost* se ha incluido el valor "u" (unknown) para los espacios en blanco.
     - Se ha dividido el valor de la columna "Bathrooms" entre 10, de acuerdo a la explicación inicial de la columna en la que, por ejemplo, el valor 10 indica 1 baño y el valor 15 un baño y un aseo, es decir, 1,5 baños. Para mostrarlo, se ha creado la columna *Num. Bathrooms*.
     - La columna *Bathrooms_text* amplía la información del número de baños indicando además si son compartidos o privados. En la columna *Shared_bathrooms* se ha extraído esta información complementaria.
-    - Se ha añadido el valor "Unknown" en las columnas *Bedrooms* y *Beds* en las filas que no contenían ningún valor.
-    - En la columna *Price* se ha eliminado el símbolo del dólar, se ha reemplazado el punto por una coma y se ha específicado en el formato de la celda que son euros (€), ya que de acuerdo con la descripción de los datos esta corresponde a "daily price in local currency".
+    - En la columna *Price_€* se ha eliminado el símbolo del dólar, se ha reemplazado el punto por una coma y se ha específicado en el formato de la celda que son euros (€), ya que de acuerdo con la descripción de los datos esta corresponde a "daily price in local currency".
     - En la columna *Host_verifications* se han eliminado los corchetes y las comillas para dejar el texto más limpio. Se ha añadido el texto "no verifications" en las casillas vacías.
-5. **Revisión de valores atípicos y clasificación de valores en categorías**
+5. **Revisión de valores atípicos y clasificación de valores en categorías. Hipótesis utilizadas.**
     - En las columnas relativas a las noches mínimas o máximas que permite el anfitrión se va a seguir el siguiente criterio:
         - En la columna *minimum_nights* se aceptan como valores válidos de 1 a 365. Los valores por encima de 365 se consideran atípicos. Se ha supuesto que el anfitrión hace uso de estos valores para bloquear la posibilidad de alquilar el alojamiento en el momento del scraping.
         Para analizar de manera más sencilla estos valores, tras la limpieza de los datos, se va a dividir según el número de noches mínimas en:
@@ -154,3 +154,16 @@ Para la limpieza de los datos, se ha analizado columna a columna la calidad de l
 El resto de columnas se ha eliminado del fichero, pues no se van a utilizar en este análisis porque no aportan información significativa o porque la información está incompleta.
 
 Por otra parte, se han dejado casillas vacías en las columnas "Bedrooms", "Beds" y "Price_€" para el posterior análisis. Los datos vacíos de esta columna se tratarán más adelante como "no information" para las estadísticas de los anuncios.
+
+Tras esta limpieza y transformación de los datos, se crea un fichero csv con el que posteriormente se trabajará.
+
+
+### 📊 3. Análisis Descriptivo
+
+# PRÓXIMOS PASOS PARA LAURA:
+Analizar las columnas numéricas con los principales estadísticos descriptivos, aunque creo que eso en mi análisis no va a ser relevante del todo. 
+
+Ver qué hacer con los outliers o cómo explicar la gran dispersión de mis datos.
+
+Ver cómo tratar los casos raros que no he visto antes: 15 baños para 2 personas (privado), etc.
+
