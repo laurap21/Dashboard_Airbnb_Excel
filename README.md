@@ -167,3 +167,5 @@ Ver qué hacer con los outliers o cómo explicar la gran dispersión de mis dato
 
 Ver cómo tratar los casos raros que no he visto antes: 15 baños para 2 personas (privado), etc.
 
+- Análisis de las variables categóricas: hace tablas dinámicas y gráficos visuales.
+
