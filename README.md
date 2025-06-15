@@ -110,11 +110,15 @@ Para la limpieza de los datos, se ha analizado columna a columna la calidad de l
     - En la columna *host_location_initial* se observa gran variedad de localizaciones. El valor significativo para el análisis es solo el país, por lo que se crea la columna *Host_location* para unificar y limpiar los valores utilizando distintas fórmulas de Excel. En los valores en blanco se indica "Desconocido".
     - La columna *host_verification_initial* contiene información sobre los métodos de verificación de cada host. Se ha hecho una limpieza visual de los datos, eliminando los corchetes y las comillas y creando una nueva columna *Host_verification". También se ha añadido el valor "no verification" en las casillas vacías.
     - En la columna *Superhost* se ha incluido el valor "u" (unknown) para los espacios en blanco.
-    - Se ha dividido el valor de la columna "Bathrooms" entre 10, de acuerdo a la explicación inicial de la columna en la que, por ejemplo, el valor 10 indica 1 baño y el valor 15 un baño y un aseo, es decir, 1,5 baños. Para mostrarlo, se ha creado la columna *Num. Bathrooms*.
+    - Se ha dividido el valor de la columna "Bathrooms" entre 10, de acuerdo a la explicación inicial de la columna en la que, por ejemplo, el valor 10 indica 1 baño y el valor 15 un baño y un aseo, es decir, 1,5 baños. Para mostrarlo, se ha creado la columna *Num. Bathrooms*.*
     - La columna *Bathrooms_text* amplía la información del número de baños indicando además si son compartidos o privados. En la columna *Shared_bathrooms* se ha extraído esta información complementaria.
     - En la columna *Price_€* se ha eliminado el símbolo del dólar, se ha reemplazado el punto por una coma y se ha específicado en el formato de la celda que son euros (€), ya que de acuerdo con la descripción de los datos esta corresponde a "daily price in local currency".
     - En la columna *Host_verifications* se han eliminado los corchetes y las comillas para dejar el texto más limpio. Se ha añadido el texto "no verifications" en las casillas vacías.
-5. **Revisión de valores atípicos y clasificación de valores en categorías. Hipótesis utilizadas.**
+
+5. **Transformación a valores numéticos**
+    - Para las columnas *Host_response_rate* y *Host_acceptance_rate* se han añadido dos columnas respectivas (*Host_response_rate_num* y *Host_acceptance_rate_num*) para transformar los datos disponibles a número para posibles futuros análisis. En estas columnas vienen mezclados valores de texto y valores que pueden ser numéricos. Las filas con valores en texto "N/A" se han dejado en blanco, transformando a número los distintos porcentajes que vienen en estas columnas.
+
+6. **Revisión de valores atípicos y clasificación de valores en categorías. Hipótesis utilizadas.**
     - En las columnas relativas a las noches mínimas o máximas que permite el anfitrión se va a seguir el siguiente criterio:
         - En la columna *minimum_nights* se aceptan como valores válidos de 1 a 365. Los valores por encima de 365 se consideran atípicos. Se ha supuesto que el anfitrión hace uso de estos valores para bloquear la posibilidad de alquilar el alojamiento en el momento del scraping.
         Para analizar de manera más sencilla estos valores, tras la limpieza de los datos, se va a dividir según el número de noches mínimas en:
