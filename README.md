@@ -68,6 +68,9 @@ A continuación se detallan las etapas previstas para el desarrollo del proyecto
 
 - **Presentación de Resultados**: Entregar un informe final con las conclusiones extraídas, visualizaciones relevantes e hipótesis explicativas. Incluir recomendaciones para futuras políticas o investigaciones.
 
+
+# ⚙️ DESARROLLO DEL PROYECTO
+
 ## 📁 ESTRUCTURA DEL PROYECTO
 ```
 📂 Dashboard_Airbnb_Excel
@@ -83,21 +86,24 @@ A continuación se detallan las etapas previstas para el desarrollo del proyecto
 └── README.md
 ```
 
-## ⚙️ DESARROLLO DEL PROYECTO
-
-### 🧠 1. Comprensión general de los datos 
+## 🧠 Comprensión general de los datos 
 Se ha hecho el análisis de dos archivos llamados “listings.csv” y "listings (1). csv" obtenidos de la web de datos abiertos de Airbnb. Finalmente, solo se utilizó uno de los dos archivos, ya que el primero contiene mayor información e incluye la del segundo archivo.
 
 Se trata de un archivo de 79 columnas y 25.289 filas con información sobre los anfitriones (hosts) y sus anuncios de alojamientos en la ciudad de Madrid. Por lo tanto, se va a proceder a hacer **dos análisis**: uno sobre los hosts que tiene alojamientos en la Comunidad de Madrid y otro sobre los propios alojamientos. Se hará un cruce de datos para entender mejor el perfil del host.
 
-### 🧹 2. Transformación y limpieza de los datos
-#### Eliminación de columnas irrelevantes
-El archivo cuenta con **79 columnas**, de las cuales se van a emplear **X**. El resto han sido descartadas ya que no aportan valor real al análisis, como las columnas relativas al propio anuncio en la web (*listing_url*, *name*, *description*, *picture_url*, *host_url*, *host_name*, *host_thumbnail_url*, *host_picture_url*, *host_verifications*, *host_identity_verified*, etc.).
+## 🧹 Transformación y limpieza de los datos
+### Eliminación de columnas irrelevantes
+El archivo cuenta con **79 columnas**. Muchas de ellas han sido descartadas ya que no aportan valor real al análisis, como las columnas relativas al propio anuncio en la web (*listing_url*, *name*, *description*, *picture_url*, *host_url*, *host_name*, *host_thumbnail_url*, *host_picture_url*, *host_verifications*, *host_identity_verified*, etc.), así como las relativas a la puntuación en las *reviews* o valoraciónes, pues en este caso no se dispone de información suficiente sobre la forma de calificación empleada.
 
-Finalmente, tras el análisis inicial de los datos, la tabla con los datos a analizar consta de **29 columnas**.
+Finalmente, tras el análisis inicial de los datos, la tabla con los datos a analizar consta de **36 columnas**.
+
+### Eliminación de filas irrelevantes para el análisis
+El archivo cuenta con una columna denominada *source* que indica de dónde proviene el dato dentro del proceso de recolección. En este caso existen dos posibilidades "city scrape", que quiere decir que el dato fue extraído directamente de una web filtrada por ciudad, y "previous scrape", que indica que el dato fue recuperado o replicado de una búsqueda/recolección anterior, no de una búsqueda directa.
+
+Por tanto, las filas correspondientes a "previous scrape" serán eliminadas, ya que se quiere hacer un análisis de la oferta actual de Airbnb.
 
 
-#### Tratamiento de datos: unificación de valores, eliminación de valores nulos y registros duplicados - Revisión de columnas.
+### Tratamiento de datos: unificación de valores, eliminación de valores nulos y registros duplicados - Revisión de columnas.
 Para la limpieza de los datos, se ha analizado columna a columna la calidad de los mismos realizando, según sea necesario, las siguientes actuaciones:
 1. **Revisión de encabezados**: se corrigen los nombres de forma que queden más visuales y explicativos. 
 2. **Revisión de valores duplicados**: 
@@ -162,7 +168,19 @@ Por otra parte, se han dejado casillas vacías en las columnas "Bedrooms", "Beds
 Tras esta limpieza y transformación de los datos, se crea un fichero csv con el que posteriormente se trabajará.
 
 
-### 📊 3. Análisis Descriptivo
+# 📊 Análisis Descriptivo Hosts
+Para el análisis del perfil de los Hosts o Anfitriones de Airbnb, se eliminan las columnas relativas a los Listings o Anuncios publicados.
+
+Del datasheet filtrado y transformado de fases anteriores que contaba con todos los datos, se ha hecho un paso de transformación más, eliminando los *Host_ID* duplicados. Es decir, para el análisis del perfil de Hosts en Madrid se cuenta con un datasheet de 11 columnas y 7.896 filas.
+
+## 🔢 Análisis de las variables numéricas
+### **Host_response_rate_num**
+Para el análisis de esta variable se ha de tener en cuenta que de los datos originales vienen muchas casillas en blanco, por lo que para el análisis de las variables estadísticas será necesario filtrarlas.
+
+El total de valores en blanco de esta columna es igual a **903** que corresponde a un **11%** de los datos totales. Los **6.993 valores** restantes serán analizados:
+
+
+
 
 # PRÓXIMOS PASOS PARA LAURA:
 Analizar las columnas numéricas con los principales estadísticos descriptivos, aunque creo que eso en mi análisis no va a ser relevante del todo. 
@@ -173,3 +191,4 @@ Ver cómo tratar los casos raros que no he visto antes: 15 baños para 2 persona
 
 - Análisis de las variables categóricas: hace tablas dinámicas y gráficos visuales.
 
+REVISAR TODOS LOS HISTOGRAMAS DEL ANALISIS DE LISTINGS
