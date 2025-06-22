@@ -189,6 +189,26 @@ Ver qué hacer con los outliers o cómo explicar la gran dispersión de mis dato
 
 Ver cómo tratar los casos raros que no he visto antes: 15 baños para 2 personas (privado), etc.
 
-- Análisis de las variables categóricas: hace tablas dinámicas y gráficos visuales.
+- Análisis de las variables categóricas: hacer tablas dinámicas y gráficos visuales.
 
 REVISAR TODOS LOS HISTOGRAMAS DEL ANALISIS DE LISTINGS
+
+LISTADO DE MÉTRICAS QUE QUIERO MOSTRAR EN MI ANÁLISIS
+
+HOSTS
+- Número total de Hosts --> KPI Principal a mostrar
+- # hosts únicos
+- Hosts profesionales (a partir de 5 # listings, por ejemplo)
+- % hosts verificados
+- % superhosts
+- Distribución medios de verificación
+- Tiempo de respuesta --> Voy a usar el categórico
+- % de aceptación --> Este ahora mismo no sé muy bien qué quiere decir.
+
+LISTINGS
+- Número total de listings --> KPI Principal a mostrar
+- Distribución tipo de alojamiento
+- Distribución tipo de habitación
+- Distribución # huéspedes
+- Distribución # baños
+- Tipo de alojamiento por barrio
