@@ -195,20 +195,27 @@ REVISAR TODOS LOS HISTOGRAMAS DEL ANALISIS DE LISTINGS
 
 LISTADO DE MÉTRICAS QUE QUIERO MOSTRAR EN MI ANÁLISIS
 
-HOSTS
+## HOSTS
 - Número total de Hosts --> KPI Principal a mostrar
-- # hosts únicos
+- Num. hosts únicos
 - Hosts profesionales (a partir de 5 # listings, por ejemplo)
 - % hosts verificados
 - % superhosts
 - Distribución medios de verificación
 - Tiempo de respuesta --> Voy a usar el categórico
 - % de aceptación --> Este ahora mismo no sé muy bien qué quiere decir.
+**Mezcla con Listings:** --> Segmentación de datos para el dashboard
+- Superhosts vs no superhosts: diferencia de precios, disponibilidad, número de reviews
 
-LISTINGS
+## Análisis de la Oferta --> LISTINGS
 - Número total de listings --> KPI Principal a mostrar
+- Listings x host (??)
 - Distribución tipo de alojamiento
 - Distribución tipo de habitación
 - Distribución # huéspedes
 - Distribución # baños
 - Tipo de alojamiento por barrio
+- Precio por barrio
+- Disponibilidad anual por barrio
+- Relación entre disponibilidad y tipo de propiedad
+- Relación entre número de reservas y precio
