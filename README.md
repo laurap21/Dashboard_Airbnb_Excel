@@ -204,12 +204,12 @@ LISTADO DE MÉTRICAS QUE QUIERO MOSTRAR EN MI ANÁLISIS
 - Distribución medios de verificación
 - Tiempo de respuesta --> Voy a usar el categórico
 - % de aceptación --> Este ahora mismo no sé muy bien qué quiere decir.
+
 **Mezcla con Listings:** --> Segmentación de datos para el dashboard
 - Superhosts vs no superhosts: diferencia de precios, disponibilidad, número de reviews
 
 ## Análisis de la Oferta --> LISTINGS
 - Número total de listings --> KPI Principal a mostrar
-- Listings x host (??)
 - Distribución tipo de alojamiento
 - Distribución tipo de habitación
 - Distribución # huéspedes
@@ -218,4 +218,4 @@ LISTADO DE MÉTRICAS QUE QUIERO MOSTRAR EN MI ANÁLISIS
 - Precio por barrio
 - Disponibilidad anual por barrio
 - Relación entre disponibilidad y tipo de propiedad
-- Relación entre número de reservas y precio
+- Relación entre número de reseñas y precio
