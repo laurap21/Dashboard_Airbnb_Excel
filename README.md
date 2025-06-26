@@ -180,21 +180,12 @@ Para el análisis de esta variable se ha de tener en cuenta que de los datos ori
 El total de valores en blanco de esta columna es igual a **903** que corresponde a un **11%** de los datos totales. Los **6.993 valores** restantes serán analizados:
 
 
-
-
 # PRÓXIMOS PASOS PARA LAURA:
-Analizar las columnas numéricas con los principales estadísticos descriptivos, aunque creo que eso en mi análisis no va a ser relevante del todo. 
+- Ver qué hacer con los outliers o cómo explicar la gran dispersión de mis datos.
+- Ver cómo tratar los casos raros que no he visto antes: 15 baños para 2 personas (privado), etc.
+- Revisar los histogramas y gráficas de los Excels de Análisis.
 
-Ver qué hacer con los outliers o cómo explicar la gran dispersión de mis datos.
-
-Ver cómo tratar los casos raros que no he visto antes: 15 baños para 2 personas (privado), etc.
-
-- Análisis de las variables categóricas: hacer tablas dinámicas y gráficos visuales.
-
-REVISAR TODOS LOS HISTOGRAMAS DEL ANALISIS DE LISTINGS
-
-LISTADO DE MÉTRICAS QUE QUIERO MOSTRAR EN MI ANÁLISIS
-
+# LISTADO DE MÉTRICAS QUE QUIERO MOSTRAR EN MI ANÁLISIS
 ## HOSTS
 - Número total de Hosts --> KPI Principal a mostrar
 - Num. hosts únicos
@@ -205,10 +196,7 @@ LISTADO DE MÉTRICAS QUE QUIERO MOSTRAR EN MI ANÁLISIS
 - Tiempo de respuesta --> Voy a usar el categórico
 - % de aceptación --> Este ahora mismo no sé muy bien qué quiere decir.
 
-**Mezcla con Listings:** --> Segmentación de datos para el dashboard
-- Superhosts vs no superhosts: diferencia de precios, disponibilidad, número de reviews
-
-## Análisis de la Oferta --> LISTINGS
+## LISTINGS --> Análisis de la oferta
 - Número total de listings --> KPI Principal a mostrar
 - Distribución tipo de alojamiento
 - Distribución tipo de habitación
@@ -219,3 +207,11 @@ LISTADO DE MÉTRICAS QUE QUIERO MOSTRAR EN MI ANÁLISIS
 - Disponibilidad anual por barrio
 - Relación entre disponibilidad y tipo de propiedad
 - Relación entre número de reseñas y precio
+
+## MEZCLA CON LISTINGS: --> Segmentación de datos para el Dashboard (la gran mayoría)
+- Superhosts vs no superhosts: diferencia de precios, disponibilidad, número de reviews
+- Segmentación por barrios (precios, tipos de alojamiento, etc.)
+
+## TIPS PARA CREAR EL DHASBOARD (de los vídeos de las clases):
+1. "ctrl + k" --> Crear botón para cambio de Dashboards (cambio de pestañas) sin necesidad de crear Macros.
+2. Crear segmentadores.
