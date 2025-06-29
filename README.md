@@ -188,7 +188,7 @@ El total de valores en blanco de esta columna es igual a **903** que corresponde
 # LISTADO DE MÉTRICAS QUE QUIERO MOSTRAR EN MI ANÁLISIS
 ## HOSTS
 - Número total de Hosts --> KPI Principal a mostrar
-- Num. hosts únicos
+- Num. hosts con un solo anuncio.
 - Hosts profesionales (a partir de 5 # listings, por ejemplo)
 - % hosts verificados
 - % superhosts
@@ -202,11 +202,12 @@ El total de valores en blanco de esta columna es igual a **903** que corresponde
 - Distribución tipo de habitación
 - Distribución # huéspedes
 - Distribución # baños
+- Distribución # habitaciones
+- Distribución # camas
+- Distribución Precios general
 - Tipo de alojamiento por barrio
 - Precio por barrio
-- Disponibilidad anual por barrio
-- Relación entre disponibilidad y tipo de propiedad
-- Relación entre número de reseñas y precio
+- Relación entre número de reseñas y precio --> los anuncios con precios entre 28 y 137 €/noche son los que más reseñas tienen. Precio más asequible. No sé si termina de tener sentido visual, igual en el análisis sí.
 
 ## MEZCLA CON LISTINGS: --> Segmentación de datos para el Dashboard (la gran mayoría)
 - Superhosts vs no superhosts: diferencia de precios, disponibilidad, número de reviews
