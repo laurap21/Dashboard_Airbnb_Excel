@@ -74,7 +74,18 @@ A continuación se detallan las etapas previstas para el desarrollo del proyecto
 ## 📁 ESTRUCTURA DEL PROYECTO
 ```
 📂 Dashboard_Airbnb_Excel
-├── Datasets/
+├──Data/
+│   └── Airbnb Madrid Completo_Dashboards.xlxs   # Archivo con los dashboards finales
+│   └── Airbnb_Madrid_Analisis_Hosts.xlsx        # Análisis de los datos de los Hosts
+│   └── Airbnb_Madrid_Analisis_Listings.xlsx     # Análisis de los datosde los los Listings
+│   └── OLD/                                     # Versiones antiguas descartadas
+│       └── Airbnb Madrid Completo_V1.csv
+│       └── Airbnb Madrid Completo_V2.csv
+│       └── Airbnb Madrid Completo_V3.csv
+│       └── Airbnb_Madrid_Analisis.xlsx
+│       └── Airbnb_Madrod_Analisis_V2.xlsx
+│       └── Airbnb_Madrod_Analisis_V3.xlsx
+├──Datasets/
 │   └── Datasets Airbnb Madrid.xlxs   # Datos brutos descargados de Inside Airbnb
 │   └── Dasets Ejemplo.xlsx           # Datos brutos descargados de Inside Airbnb
 ├── Datos iniciales/
@@ -82,14 +93,15 @@ A continuación se detallan las etapas previstas para el desarrollo del proyecto
 │   └── listings (1).csv              # Datos originales (1)
 ├── Excel/
 │   └── Airbnb Madrid Completo.xlsx   # Archivo de trabajo (EDA, Dashboards)
+│   └── Airbnb Madrid Completo_V1.xlsx   # Archivo de trabajo (EDA, Dashboards) - V1 solventando errores
 ├── Proyecto_Airbnb_Madrid.docx       # Documento inicial de trabajo
 └── README.md
 ```
 
 ## 🧠 Comprensión general de los datos 
-Se ha hecho el análisis de dos archivos llamados “listings.csv” y "listings (1). csv" obtenidos de la web de datos abiertos de Airbnb. Finalmente, solo se utilizó uno de los dos archivos, ya que el primero contiene mayor información e incluye la del segundo archivo.
+Se ha hecho el análisis de dos archivos llamados “listings.csv” y "listings (1). csv" obtenidos de la web de datos abiertos de Airbnb. Finalmente, solo se ha utilizado uno de los dos archivos, ya que el primero contiene mayor información e incluye la del segundo archivo.
 
-Se trata de un archivo de 79 columnas y 25.289 filas con información sobre los anfitriones (hosts) y sus anuncios de alojamientos en la ciudad de Madrid. Por lo tanto, se va a proceder a hacer **dos análisis**: uno sobre los hosts que tiene alojamientos en la Comunidad de Madrid y otro sobre los propios alojamientos. Se hará un cruce de datos para entender mejor el perfil del host.
+Se trata de un archivo de 79 columnas y 25.289 filas con información sobre los anfitriones (hosts) y sus anuncios de alojamientos en la ciudad de Madrid. Por lo tanto, se va a proceder a hacer **dos análisis**: uno sobre los hosts que tiene alojamientos en la Comunidad de Madrid y otro sobre los propios alojamientos.
 
 ## 🧹 Transformación y limpieza de los datos
 ### Eliminación de columnas irrelevantes
@@ -111,12 +123,13 @@ Para la limpieza de los datos, se ha analizado columna a columna la calidad de l
     - En cambio, por ID de Host sí hay, ya que un mismo host puede tener varios anuncios.
 3. **Revisión de valores nulos/vacíos** :
     - La primera columna con valores nulos es *host_since*: existen valores vacíos que se van a eliminar, ya que no suponen una muestra de datos representativa frente al total (19 frente a 25.289, es decir, un 0,07 %). Además, se observa que estas filas tampoco disponen de información sobre el host.
-    - Se han dejado casillas vacías en las columnas "Bedrooms", "Beds" y "Price_€" para el posterior análisis. Los datos vacíos de esta columna se tratarán más adelante como "no information" para las estadísticas de los anuncios.
+    - Se han dejado casillas vacías en las columnas "Bedrooms", "Beds" y "Price_€" para el posterior análisis.
 4.	**Unificación de valores**: 
-    - En la columna *host_location_initial* se observa gran variedad de localizaciones. El valor significativo para el análisis es solo el país, por lo que se crea la columna *Host_location* para unificar y limpiar los valores utilizando distintas fórmulas de Excel. En los valores en blanco se indica "Desconocido".
-    - La columna *host_verification_initial* contiene información sobre los métodos de verificación de cada host. Se ha hecho una limpieza visual de los datos, eliminando los corchetes y las comillas y creando una nueva columna *Host_verification". También se ha añadido el valor "no verification" en las casillas vacías.
-    - En la columna *Superhost* se ha incluido el valor "u" (unknown) para los espacios en blanco.
-    - Se ha dividido el valor de la columna "Bathrooms" entre 10, de acuerdo a la explicación inicial de la columna en la que, por ejemplo, el valor 10 indica 1 baño y el valor 15 un baño y un aseo, es decir, 1,5 baños. Para mostrarlo, se ha creado la columna *Num. Bathrooms*.*
+    - En la columna *host_location_initial* se observa gran variedad de localizaciones. El valor significativo para el análisis es solo el país, por lo que se crea la columna *Host_location* para unificar y limpiar los valores utilizando distintas fórmulas de Excel. En los valores en blanco se indica "Unknown".
+    - La columna *host_verification_initial* contiene información sobre los métodos de verificación de cada host. Se ha hecho una limpieza visual de los datos, eliminando los corchetes y las comillas y creando una nueva columna *Host_verification*. También se ha añadido el valor "no verification" en las casillas vacías.
+    - En la columna *Superhost* se han completado las posibles opciones (True, False) y se ha incluido el valor "unknown" para los espacios en blanco.
+    - Se ha procedido de igual manera para las columnas *Host_identity_verified* e *Instant_bookable*-
+    - Se ha dividido el valor de la columna "Bathrooms" entre 10, de acuerdo a la explicación inicial de la columna en la que, por ejemplo, el valor 10 indica 1 baño y el valor 15 un baño y un aseo, es decir, 1,5 baños. Para mostrarlo, se ha creado la columna *Num. Bathrooms*.
     - La columna *Bathrooms_text* amplía la información del número de baños indicando además si son compartidos o privados. En la columna *Shared_bathrooms* se ha extraído esta información complementaria.
     - En la columna *Price_€* se ha eliminado el símbolo del dólar, se ha reemplazado el punto por una coma y se ha específicado en el formato de la celda que son euros (€), ya que de acuerdo con la descripción de los datos esta corresponde a "daily price in local currency".
     - En la columna *Host_verifications* se han eliminado los corchetes y las comillas para dejar el texto más limpio. Se ha añadido el texto "no verifications" en las casillas vacías.
@@ -163,7 +176,7 @@ Para la limpieza de los datos, se ha analizado columna a columna la calidad de l
 
 El resto de columnas se ha eliminado del fichero, pues no se van a utilizar en este análisis porque no aportan información significativa o porque la información está incompleta.
 
-Por otra parte, se han dejado casillas vacías en las columnas "Bedrooms", "Beds" y "Price_€" para el posterior análisis. Los datos vacíos de esta columna se tratarán más adelante como "no information" para las estadísticas de los anuncios.
+Por otra parte, se han dejado casillas vacías en las columnas "Bedrooms", "Beds" y "Price_€" para el posterior análisis.
 
 Tras esta limpieza y transformación de los datos, se crea un fichero csv con el que posteriormente se trabajará.
 
@@ -178,6 +191,14 @@ Del datasheet filtrado y transformado de fases anteriores que contaba con todos 
 Para el análisis de esta variable se ha de tener en cuenta que de los datos originales vienen muchas casillas en blanco, por lo que para el análisis de las variables estadísticas será necesario filtrarlas.
 
 El total de valores en blanco de esta columna es igual a **903** que corresponde a un **11%** de los datos totales. Los **6.993 valores** restantes serán analizados:
+
+### **Host_listings_count**
+De acuerdo a los datos estadísticos, en promedio cada host tiene unos 5 listings (anuncios). Sin embargo, este valor se ve distorsionado por los valores extremos existentes (outliers), pues el rango de valores es de 1 a 3311.
+
+A través de la mediana y la moda se aprecia como la mitad de los host solo tiene un listing, siendo también el valor más repetido.
+
+La distribución de la muestra es leptocúrtica: hay muchos valores cerca de la media pero altísimos valores extremos. La asimetría es positiva, hay muchos valores bajos (en concordancia con la mediana y la moda) y pocos valores muy altos. 
+
 
 
 # PRÓXIMOS PASOS PARA LAURA:
@@ -209,10 +230,4 @@ El total de valores en blanco de esta columna es igual a **903** que corresponde
 - Precio por barrio
 - Relación entre número de reseñas y precio --> los anuncios con precios entre 28 y 137 €/noche son los que más reseñas tienen. Precio más asequible. No sé si termina de tener sentido visual, igual en el análisis sí.
 
-## MEZCLA CON LISTINGS: --> Segmentación de datos para el Dashboard (la gran mayoría)
-- Superhosts vs no superhosts: diferencia de precios, disponibilidad, número de reviews
-- Segmentación por barrios (precios, tipos de alojamiento, etc.)
 
-## TIPS PARA CREAR EL DHASBOARD (de los vídeos de las clases):
-1. "ctrl + k" --> Crear botón para cambio de Dashboards (cambio de pestañas) sin necesidad de crear Macros.
-2. Crear segmentadores.
