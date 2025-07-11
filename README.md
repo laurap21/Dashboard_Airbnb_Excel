@@ -192,12 +192,12 @@ Del resto de datos disponible se destaca lo siguiente:
 
 En el mapa siguiente se puede ver la distribución de la procedencia de los Hosts:
 
-![Mapa de localización de los Hosts](Images\Hosts_map.png)
+![Mapa de localización de los Hosts](/Images/Hosts_map.png)
 
 ### Host_response_time
 Esta variable está relacionada con la anterior variable numérica *Host_response_time_num*, ilustrando la misma información agrupada según el tiempo de respuesta de cada host.
 
-![](Images\Host_response_time.png)
+![](/Images/Host_response_time.png)
 
 En el gráfico superior se observa como el 62,5% de los hosts responde dentro de una hora, lo que indica un alto nivel de inmediatez. 
 
@@ -218,7 +218,7 @@ Esto les puede otorgar mayor visibilidad o mayor confianza por parte del cliente
 ### Host_verification
 Los anfitriones dentro de Airbnb tienen distintas posibilidad de contactar con los clientes y viceversa. 
 
-![Medios de verificación](Images\Host_verification.png)
+![Medios de verificación](/Images/Host_verification.png)
 
 La combinación más común corresponde a las verificaciones por correo electrónico (email) y por teléfono (78,95%). Un 7,7% adicional añade la verificación mediante correo profesional, lo que puede indicar un nivel extra de profesionalidad o vinculación corporativa.
 
@@ -229,7 +229,7 @@ Esta variable indica si la identidad del anfitrión está enteramente verificada
 
 Como se observa en el gráfico inferior, un 96,11% de los anfitriones están correctamente verificados por Airbnb, lo que indica alto nivel de confianza y seguridad para los huéspedes. 
 
-![Verificación de identidad](Images\Identity_verification.png)
+![Verificación de identidad](/Images/Identity_verification.png)
 
 
 ## 📅 Análisis temporal
@@ -238,7 +238,7 @@ Esta variable indica desde cuando el anfitrión pertenece a la plataforma de Air
 
 En la gráfica temporal se puede observar el crecimiento de uso y confianza depositado en la plataforma a lo largo de los años y cómo, en relación al turismo general, a la pandemia de 2019 y a distintos factores geopolíticos, ha ido evolucionando: 
 
-![Host since](Images\Host_since.png)
+![Host since](/Images/Host_since.png)
 
 ------------------------------------------------------------------------------------
 # PRÓXIMOS PASOS PARA LAURA:
