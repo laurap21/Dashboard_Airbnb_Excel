@@ -120,7 +120,7 @@ Por otra parte, se han dejado casillas vacías en las columnas "Bedrooms", "Beds
 Tras esta limpieza y transformación de los datos, se crea un fichero csv con el que posteriormente se trabajará.
 
 
-# 📊 Análisis Descriptivo Hosts
+# 👩🏼‍💼 Análisis Descriptivo Hosts
 Para el análisis del perfil de los Hosts o Anfitriones de Airbnb, se eliminan las columnas relativas a los Listings o Anuncios publicados.
 
 Del datasheet filtrado y transformado de fases anteriores que contaba con todos los datos, se ha hecho un paso de transformación más, eliminando los *Host_ID* duplicados. Es decir, para el análisis del perfil de Hosts en Madrid se cuenta con un datasheet de 11 columnas y 7.896 filas.
@@ -239,6 +239,80 @@ Esta variable indica desde cuando el anfitrión pertenece a la plataforma de Air
 En la gráfica temporal se puede observar el crecimiento de uso y confianza depositado en la plataforma a lo largo de los años y cómo, en relación al turismo general, a la pandemia de 2019 y a distintos factores geopolíticos, ha ido evolucionando: 
 
 ![Host since](/Images/Host_since.png)
+
+## 🗂️ Análisis bivariable
+Para entender la posible relación entre las distintas variables, se ha hecho un análisis de correlación. Previo a esto, ha sido necesario asignar a ciertas variables categóricas un valor numérico siguiendo un criterio lógico. Las variables a las que se les ha asignado un valor son las siguientes: *Host_response_time*, *Superhost* y *Host_identity_verified*.
+
+La matriz resultante es la siguiente: 
+![Matriz Correlaciones](/Images/Matriz_correlaciones.png)
+
+Se puede observar que no existe gran correlación entre estas variables salvo, cómo es lógico, las variables *Host_response_time* y *Host_response_rate_num* ya que hablan de lo mismo. De igual manera, se ve que las variables que hacen referencia al ratio de tiempo de respuesta y de aceptación tienen una correlación elevada. Los Hosts con mayor ratio de aceptación son los que menor tiempo de respuesta tienen (es decir, los que mayor porcentaje de respuesta tienen).
+
+De igual manera, se observa una correlación positiva muy cerana al 1 en las variables *Hos_listing_count* y *Host_total_listings_count*, lo que indica que los *hosts* o anfitriones con más anuncios (o *listings*) en Madrid son también los que más anuncios tienen en toda la web de Airbnb. Esto quiere decir que existe una alta probabilidad de que sean usurarios profesionales en lugar de particulares.  
+
+# 🛏️ Análisis Descriptivo Listings
+Para el análisis del perfil de los Listings o Anuncios de Airbnb, se eliminan las columnas relativas a los Hosts o Anfitriones.
+
+Del datasheet filtrado y transformado de fases anteriores que contaba con todos los datos, se ha hecho un paso de transformación más, extrayendo únicamente el año para las *reviews*, tanto para la primera (*First_review*) como para la última (*Last_review*). Es decir, para el análisis de los Litings tipo en Madrid se cuenta con un datasheet de 23 columnas y 19.275 filas.
+
+## 🔢 Análisis de las variables numéricas
+### Num. Accommodates
+- Media: 3,3 | Mediana: 3 | Moda: 2
+- Mínimo: 1 | Máximo: 16 | Desviación estándar: 1,93
+- Asimetría: 1,65 | Curtosis: 5,24
+
+Según el análisis estadístico, en promedio los alojamientos hospedan unas 3-4 personas. El error típico es muy bajo, lo que indica precisión en el cálculo de esta media. 
+La mitad de los alojamientos alojan hasta 3 personas, aunque la capacidad de hospedaje más frecuente es de 2 personas. Todo esto sugiere que el mercado está principalmente orientado a parejas o pocos viajeros.
+
+Los alojamientos van desde capacidad para 1 persona hasta para grupos de 16 personas.  
+
+La variabilidad de la muestra es moderdada, de acuerdo a la desviación estándar.
+
+El coeficiente de asimetría positivo indica que la distribución está fuertemente sesgada a la derecha, es decir, hay pocos alojamientos con capacidades muy altas que elevan la media (outliers). En cuento a la curtosis, indica que la distribución es leptocúrtica,  (muchos alojamientos se concentran cerca de la moda o mediana, existiendo valores extremos como se mencionaba anteriormente).
+
+En la imagen siguiente se puede apreciar la forma de la distribución: 
+![Num. Accommodates](/Images/Num_Accommodates.png)
+
+### Num. Bathrooms
+En el estudio de esta variable es importante destacar que los valores con decimales tipo X,5 indican la presencia de un asep (sin ducha ni bañera), mientras que los valores enteros representan baños completos.
+
+- Media: 1,29 | Mediana: 1 | Moda: 1
+- Mínimo: 0 | Máximo: 15 | Desviación estándar: 0,63
+- Asimetría: 3,26 | Curtosis: 25,50
+
+La media indica que los alojamientos disponene entre 1 y 2 baños/aseos. La mediana muestra que al menos el 50% de los alojamientos disponen de 1 solo baño o aseo y, de igual manera, la moda muestra que el valor más frecuentes es igualmente de 1. 
+
+Dado que los valores decimales (X,5) representan aseos (en lugar de baños completos), la media de 1,29 refleja que, además del baño principal, algunos alojamientos disponen de un aseo adicional, aumentando levemente el promedio respecto a la mediana y a la moda.
+
+El valor de la desviación estandar señala que hay poca variablidad en el número de baños, concentrándose fuertemente alrededor del valor modal (1). El amplio valor del rango (de 1 a 15) indica la presencia de casos extraordinarios con un número muy elevado de baños, probablemente correspondiendo a grandes viviendas, edificios segmentados o alojamientos con baños compartidos.
+
+La asimetría de esta distribución es positiva, con una larga cola a la derecha debido a la presencia de unos pocos alojamientos con muchos baños. La curtosis indica una distribución extremadamente leptocúrtica: la mayoría de alojamientos se agrupan muy fuertemente alrededor del valor central. De nuevo, esto indica que hay valores extremos.
+
+![Num. Bathrooms](/Images/Num_Bathrooms.png)
+
+### Bedrooms
+- Media: 1,38 | Mediana: 1 | Moda: 1
+- Mínimo: 0 | Máximo: 25 | Desviación estándar: 0,94
+- Asimetría: 3,44 | Curtosis: 43,06
+
+En promedio, los alojamientos de la muestra cuentan con 1-2 dormitorios. El valor de la mediana y la moda coinciden en 1, evidenciando que el número de dormitorios más común y el punto central de la distribución son el mismo. La desviación de la media frente a estos valores indica que hay algunos alojamientos con más habitaciones, lo que eleva la media. 
+
+La desviación estándar muestra una variabilidad moderada, la mayoría de alojamientos se encuentran cerca del valor modal, aunque existe cierta dispersión. El rango de 0 a 25 dormitorios indica que existen alojamientos que pueden ser un estudio (sin habitaciones) o que existen casos, como villas, fincas o alojamientos compartidos, que tienen un elevado número de dormitorios y distorsionan el rango.
+
+El coeficiente de asimetría indica que ésta es positiva, con una cola larga hacia la derecha. Esto concuerda con la presencia de outliers o pocos alojamientos con muchas habitaciones. De igual manera, la distribución extremadamente leptocúrtica, confirma la concentración alrededor del valor central junto a una mayor frecuencia de valores atípicos.
+
+![Bedrooms](/Images/Bedrooms.png)
+
+### Beds
+- Media: 1,98 | Mediana: 2 | Moda: 1
+- Mínimo: 0 | Máximo: 40 | Desviación estándar: 1,46
+- Asimetría: 3,92 | Curtosis: 44,96
+
+La media indica que, en promedio, los alojamientos tienen aproximadamente 2 camas, lo que resulta coherente con un mercado orientado a pequeños grupos o parejas. En este caso, mediana y moda no coinciden. La mediana (2) señala que al menos el 50% de los alojamientos disponen de 2 camas o menos, mientras que la moda (1) indica que el número más frecuente de camas es 1. 
+
+Un rango elevado, de 0 a 40 camas, revela la existencia de propiedades excepcionales, probablemente grandes propieddades para grupos o con camas/habitaciones compartidas. La desviación estándar muestra una dispersión mayor que en las variables anteriormente analizadas, lo que sugiere mayor variedad en la configuración de camas. 
+
+
 
 ------------------------------------------------------------------------------------
 # PRÓXIMOS PASOS PARA LAURA:
