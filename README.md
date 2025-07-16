@@ -204,7 +204,6 @@ En el gráfico superior se observa como el 62,5% de los hosts responde dentro de
 Agrupando los hosts que responden en pocas horas (13,4%) y los que responde dentro del mismo día (6,9%), el 82,8% de los hosts responde en menos de un día. Esto favorece el uso de Airbnb y mejor la confianza del cliente con respecto a los anfitriones. 
 
 ### Superhost
-
 Del total de anfitriones analizados en la muestra para Madrid, tan solo el 33,68% está considerado superhost para Airbnb. Esto quiere decir que al menos 1 de cada 3 anfitriones cumple los requesitos específicos de Airbnb para alcanzar esta categoría, que son:
 1. Tasa alta de respuesta: contestar al menos el 90% de los mensajes en 24 horas.
 2. Tasa baja de cancelación: mantener las cancelaciones al mínimo (1% o menos).
@@ -312,6 +311,96 @@ La media indica que, en promedio, los alojamientos tienen aproximadamente 2 cama
 
 Un rango elevado, de 0 a 40 camas, revela la existencia de propiedades excepcionales, probablemente grandes propieddades para grupos o con camas/habitaciones compartidas. La desviación estándar muestra una dispersión mayor que en las variables anteriormente analizadas, lo que sugiere mayor variedad en la configuración de camas. 
 
+El coeficiente de asimetría altamente positivo indica que la mayoría de alojamientos tienen pocas camas aunque existen algunos con un elevado número de camas. La curtosis, extremadamente leptocúrtica, evidencia que los datos están fuertemente concentrados alrededor de los valores bajos, pero con colas largas que reflejan la presencia de numerosos vazlores atípicos.
+
+![Beds](/Images/Beds.png)
+
+### Price_€
+- Media: 138,89€ | Mediana: 97€ | Moda: 80€
+- Mínimo: 8€ | Máximo: 23.124€ | Desviación estándar: 433,61€
+- Asimetría: 31,29 | Curtosis: 1.248,21
+
+La media indica el precio promedio por noche de la muestra, que en este caso no es representativo dada la gran variabilidad. La mediana, significativamente menos a la media revela una distribución que no es simétrica y confirma que la mayoría de los precios tienen precios por debajo del promedio. La moda, el precio más frecuente, muestra el punto de máxima concentración. Es decir, a pesar de que el promedio está alrededor de 139€, la mayoría de los alojamientos se sitúan más cerca de 80-100€.
+
+La alta desviación estándar indica la gran variabilidad de los precios, también reflejada en el gran rango de valores (8 - 23.124€). Esto se puede deber a la existencia de propiedades muy exclusivas o valores erroneos/atípicos. Al no conocer el origen de datos y no poder comprobar si son correctos o no, se han considerado válidos pero extremadamente atípicos. Se debería realizar un análisis en profundidad de esto.
+
+La asimetría, de nuevo altamente positiva, indica que la gran mayoría de precios son bajos o moderados pero existen unos pocos alojamientos lujosos con precios muy elevados (o atípicos, como se comenta en el párrafo anterior). De igual manera, la curtosis letpocúrtica, evidencia la presencia de valores extremos.
+
+![Price](/Images/Price.png)
+
+### Minimum_nights
+Esta variable está doblemente analizada, a nivel numérico y a nivel categórico, ya que se ha clasificado en niveles de exigencia según el número de noches (explicado anteriormente).
+
+- Media: 7,74 | Mediana: 2 | Moda: 1
+- Mínimo: 1 | Máximo: 700 | Desviación estándar: 20,07
+- Asimetría: 9,00 | Curtosis: 151,41
+
+La media de 7,74 indica que en promedio se exige un mínimo de 7-8 noches de reserva como mínimo. Sin embargo, la mediana evidencia que al menos la mitad de los alojamientos aceptan reservas muy cortas (de 2 noches o menos). El valor más frecuente revela que la política dominante es aceptar estancias mínimas de una sola noche, faiclitando la flexibilidad para estancias cortas.
+
+La desviación estándar refleja una variabilidad muy alta en los requisitos mínimos de estancia. El rango, de 1 a 700 noches, evidencia la existencia de propiedades con requisitos extraordinariamente altos. Como se mencionaba anteriormente, en la transformación de datos, los requisitos de noches mínimas mayores a 365 se consideran "anuncios bloqueados", al ser tan elevadas.
+
+El coeficiente de asimetría positivo significa que la mayoría exige estancias cortas, confirmado por la curtosis leptocúrtica.
+
+![Minimum_nights](/Images/Min_nights.png)
+
+### Maximum_nights
+Esta variable está doblemente analizada, a nivel numérico y a nivel categórico, ya que se ha clasificado en niveles de exigencia según el número de noches (explicado anteriormente).
+
+- Media: 512,05 | Mediana: 365 | Moda: 365
+- Mínimo: 1 | Máximo: 1.825 | Desviación estándar: 397,51
+- Asimetría: 0,64 | Curtosis: -1,07
+
+De media, los alojamientos aceptan reservas de hasta 512 noches (1 año y 5 meses). Sin embargo, la mediana y la moda coinciden en 365 noches.
+
+La desviación estándar indica una dispersión muy amplia, casi tan grande como la media, reflejando la existencia de políticas diversas que permiten desde estancias muy cortas hasta periodos prolongados. El elevado rango podría indica que existen propiedades con mucha flexibilidad a la hora de reservar por noches, probablemente orientadas a alquiler temporal extendido. Sin embargo, los anuncios con un máximo de noches igual a 365 se han tratado como si no tuvieran un límite práctico, dado que raramente un huésped reserva estancias tan largas.
+
+El coeficiente de asimetría indica una ligera asimetría positiva, con una cola que se extiende hacia valores más altos, pero mucho menos pronunciada que en variables anteriores. La curtosis, en este caso platicúrtica, implica que los valores están más dispersos y hay menos concentración extrema en torno a la media, pese a existir el pico en 365.
+
+![Max_nights](/Images/Max_nights.png)
+
+### Availability_365
+Esta variable está doblemente analizada, a nivel numérico y a nivel categórico, ya que se ha clasificado en niveles de exigencia según el número de noches (explicado anteriormente).
+
+- Media: 173,16 | Mediana: 179 | Moda: 0
+- Mínimo: 0 | Máximo: 365 | Desviación estándar: 126,62
+- Asimetría: -0,01 | Curtosis: -1,47
+
+La media de 173 días indica que en promedio los alojamientos están disponibles poco menos de la mitad del año. La mediana, similar a la media, indica que la mitad de los alojamientos tienen disponibilidad superior a 179 días del año. Por otro lado, en este caso la moda es igual a 0, que muestra que el valor más frecuente es que el alojamiento no esté disponible en ningún día del año. Esto podría deberse a anuncios inactivos, bloqueos temporales en el momento del scraping o propiedades ocupadas permanentemente.
+
+La desviación estándar, bastante alta, muestra una gran diversidad en la disponibilidad: algunos alojamientos están prácticamente siempre disponibles mientras que otros no lo están casi nunca. El rango de 365 cubre completamente el año, mostrando la heterogeneidad de políticas o situaciones de los hosts.
+
+El coeficiente de asimetría es prácticamente 0, lo que indica una distribución simétrica, sin sesgo claro hacia mayor o menor disponibilidad. La curtosis indica una distribución platicúrtica, con menos datos concentrados cerca del promedio. Esto sugiere que la disponibilidad se dispersa de forma más uniforme entre los diferentes valores, sin aglomerarse en torno a un único rango.
+
+![Availability](/Images/Availability.png)
+
+### Number_of_reviews
+
+- Media: 55,74 | Mediana: 16 | Moda: 0
+- Mínimo: 0 | Máximo: 1.080 | Desviación estándar: 96,13
+- Asimetría: 3,25 | Curtosis: 14,49
+
+La media indica que en promedio los anuncios han recibidio alrededor de 55-56 opinones. La medaiana, de 16 reseñas, muestra que la mitad de los alojamientos tienen 16 o menos reseñas, mucho menor que la media. Esto refleja la influencia de algunos anuncios con altísimos números de reseñas. La moda vuelve a ser igual a 0, lo que indica que muchos alojamientos no tienen reseñas todavía (anuncios nuevos o con baja demanda).
+
+La desviación estándar es muy alta en comparación con la media, evidenciando una dispersión considerable en el número de reseñas entre anuncios. Esto queda respaldado por el amplio rango de valores.
+
+El coeficiente de asumetría indica una distribución altamente asimétrica positiva. La mayoría de anuncios tiene pocas reseña y solo una minoría concentra números muy elevados. La curtosis fuertemente leptocúrtica confirma que hay mucha concentración en casos con pocas reseñas, pero también existen valores extremos con cientos o miles de opiniones.
+
+![Num. of reviews](/Images/Num_reviews.png)
+
+## 📈 Análisis de las variables categóricas
+### Neighbourhood_group_cleansed
+Esta variable muestra en que distrito de la ciudad de Madrid se encuentra cada alojamiento. A continuación, el gráfico que lo representa:
+
+![Neighbourhood](/Images/Neighbourhood.png)
+
+El 43% de los alojamientos se encuentran ubicados en el distrito centro, desmarcándose del resto de ubicaciones, que oscilan entre un 0,3% y un 7%. Las zonas mejor comunicadas o más céntrica, como Tetúan o Salamanca, se corresponden con estos porcentajes cercanos a 7% mientras que cuánto más alejados o peor comunicados están, disminuye la oferta.
+
+### Property_type y room_type
+Para analizar el tipo de alojamiento o de estancia existen dos variables: 
+- *Property_type* que indica cómo se ha caracterizado el alojamiento en la plataforma, y
+- *Room_type* que hace referencia de forma más genérica al tipo de alojamiento o habitación en el que se hospedará el posible huésped.
+
+![Property_type](/Images/Property_type.png)
 
 
 ------------------------------------------------------------------------------------
