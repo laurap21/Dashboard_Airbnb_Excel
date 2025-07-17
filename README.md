@@ -243,7 +243,7 @@ En la gráfica temporal se puede observar el crecimiento de uso y confianza depo
 Para entender la posible relación entre las distintas variables, se ha hecho un análisis de correlación. Previo a esto, ha sido necesario asignar a ciertas variables categóricas un valor numérico siguiendo un criterio lógico. Las variables a las que se les ha asignado un valor son las siguientes: *Host_response_time*, *Superhost* y *Host_identity_verified*.
 
 La matriz resultante es la siguiente: 
-![Matriz Correlaciones](/Images/Matriz_correlaciones.png)
+![Matriz Correlaciones](/Images/Matriz_correlaciones_Hosts.png)
 
 Se puede observar que no existe gran correlación entre estas variables salvo, cómo es lógico, las variables *Host_response_time* y *Host_response_rate_num* ya que hablan de lo mismo. De igual manera, se ve que las variables que hacen referencia al ratio de tiempo de respuesta y de aceptación tienen una correlación elevada. Los Hosts con mayor ratio de aceptación son los que menor tiempo de respuesta tienen (es decir, los que mayor porcentaje de respuesta tienen).
 
@@ -400,7 +400,54 @@ Para analizar el tipo de alojamiento o de estancia existen dos variables:
 - *Property_type* que indica cómo se ha caracterizado el alojamiento en la plataforma, y
 - *Room_type* que hace referencia de forma más genérica al tipo de alojamiento o habitación en el que se hospedará el posible huésped.
 
+Como se puede ver en el gráfico siguiente, existen muchos tipos de propiedades para clasificar un alojamiento, siendo el más común y estándar *Entire rental unit* que representa un 65% del total de la muestra. Esto puede deberse a que no es necesario especificar el tipo de propiedad tan específicamente, siendo que la mayoría serán apartamentos/pisos estándar. 
+
 ![Property_type](/Images/Property_type.png)
+
+Por otro lado, para el usuario es más importante saber al tipo de estancia concreta en la que se va a hospedar, coincidiendo el valor más representativo anterior con el que se observa en el gráfico siguiente, *Entire home/apt.*, con un 72% del total.
+
+![Room_type](/Images/Room_type.png)
+
+### Shared_bathrooms
+Otra variable caracterísitica de los alojamientos de alquiler es la posibilidad o no de tener baño privado. En la gráfica siguiente se observa que un 84% de los anuncios ofrecen baño privado en sus alojamientos, mientras que tan solo en un 16% de los mismos el baño sería compartido.
+
+![Shared_bathrooms](/Images/Shared_bathrooms.png)
+
+### Minimum_night_category
+Como comentado anteriormente, la variable numérica *Minimum_nights* se ha categorizado en distintas opciones en función de un rango de número de noches para así hacer más fácil el análisis y la comprensión del perfil de anuncios disponibles.
+
+![Min_nights_cat](/Images/Min_nights_cat.png)
+
+Se puede apreciar como el mínimo de noches categorizado corresponde a *Very short stay* - estancias muy cortas - con un 75%, es decir, la mayoría de los anuncios no necesitan un mínimo de noches de reserva elevado.
+
+### Maximum_nights_category
+De igual manera que con la variable anterior, se han categorizado los valores de esta variable para mejorar la visibilidad de la muestra.
+
+![Max_night_cat](/Images/Max_nights_cat.png)
+
+En este caso, y como se ha mencionado anteriormente, se ha considerado que los valores por encima de 365 implican que no hay límite significativo real en la reserva ya que podría ser considerado un alquiler estándar. Se aprecia, pues, que más de la mayoría de los alojamientos admite reservas largas, de hasta 1 año (55,33%) mientras que las reservas limitadas a estancias cortas o medias son escasas en comparación (7,34%).
+
+### Annual_availability
+Esta variable, también analizada previamente y categorizada para facilitar la comprensión, indica y refleja en el gráfico siguiente que a pesar de que el número más repetido de acuerdo con la moda sea 0, el rango de *high availability* abarca más valores (de 6 meses a un año).
+
+Este gráfico muestra que el 47% de los alojamientos están disponibles al menos la mitad del años en la plataforma Airbnb, mientras que tan solo un 2,53% están siempre disponibles. Esto refleja que es poco común mantener la disponibilidad continua.
+
+La categoría *Low availability* puede reflejar como el 26% de los alojamientos solo están disponibles hasta 3 meses al año, lo que puede estar relacionado con periodos vacacionales, por ejemplo.
+
+![Availability_cat](/Images/Availability_cat.png)
+
+### Instant_bookable
+Esta categoría muestra la facilidad o no de reservar automáticamente un alojamiento, sin pasar por la aprobación del *host* o anfitrión. 
+
+En este caso los porcentajes son muy similares, siendo ligeramente mayor el número de alojamientos que necesitan la aprocación específica de su anfitrión. 
+
+![Instant_bookable](/Images/Instant_bookable.png)
+
+## 🗂️ Análisis bivariable
+En la matriz de correlaciones de los anuncios (o *listings*) se observa que puede existir una posible correlación entre varias variables.
+
+Puede resultar evidente que existe una relación directa entre el número de 
+![Matriz correlaciones](/Images/Matriz_correlaciones_Listings.png)
 
 
 ------------------------------------------------------------------------------------
