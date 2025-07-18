@@ -26,7 +26,6 @@ El archivo cuenta con una columna denominada *source* que indica de dónde provi
 
 Por tanto, las filas correspondientes a "previous scrape" serán eliminadas, ya que se quiere hacer un análisis de la oferta actual de Airbnb.
 
-
 ### Tratamiento de datos: unificación de valores, eliminación de valores nulos y registros duplicados - Revisión de columnas.
 Para la limpieza de los datos, se ha analizado columna a columna la calidad de los mismos realizando, según sea necesario, las siguientes actuaciones:
 1. **Revisión de encabezados**: se corrigen los nombres de forma que queden más visuales y explicativos. 
@@ -441,3 +440,27 @@ Una vez analizadas todas las variables y de cara a la realización del dashboard
 ![Precio medio](/Images/Precio_medio_barrio.png)
 
 ## 🏁 CONCLUSIONES
+Una vez analizados los datos se puedes extraer las siguientes conclusiones.
+
+Para el perfil de **Hosts**: 
+- En el momento de extracción de la muestra de la web de datos abiertos de Airbnb existían un total de **7.896** hosts o anfitriones.
+- Tan solo el 27% del total de anfitriones tiene el calificativo de *Superhost*, para lo que hay que cumplir una serie de requisitos de Airbnb. Sin embargo, el 94% está correctamente verificado por la plataforma. Esto puede deberse a la presencia de anfitriones nuevos que aún no han completado el proceso de verificación o a cambios en sus perfiles que de igual manera no han sido comprobados del todo.
+- El **49,81%** de los mismos tienen **entre 1 y 5 listings o anuncios**, lo que implica que no es su actividad profesional principal. En cambio, un **21,45%** de los anfitriones tiene **más de 50 anuncios publicados** (aunque no necesariamente disponibles), lo que lleva a la conclusión de que pueden ser cuentas profesionales cuya fuente de ingresos principal sea la gestión de alojamientos en Airbnb.
+- Para mejorar la experiencia del usuario, existen dos variables principales a analizar: los medios de verificación y comunicación y el tiempo de respuesta. el **75,69%** de los anfitriones responden y están verificados por **correo electrónico y teléfono**, siendo los medios más comunes empleados por la población. El **69%** de los anfitriones responde a las peticiones en **menos de una hora**. 
+- Por último, la gran mayoría de anfitriones en Madrid procede de España, pero hay una gran varibilidad de lugares de procedencia de los anfitriones, destacando por detás de España, EEUU, Reino Unido, México y Francia.
+
+Para el perfil de los **Listings**:
+- Existe un total de 19.274 anuncios publicados.
+- El precio medio es de 138,89€. Este precio varía de forma significativa según el distrito en el que se encuentra el alojamiento. Por ejemplo, para el distrito centro, el precio medio es de 150€ mientras que para Carabanchel es de 79€. La moda y la mediana, de 97€ y 80€ respectivamente, indican que aunque hay anuncios más caros, el precio más representativo ronda los 80-100€.
+- El **43%** de los alojamientos se concentra en el **distrito Centro**, que se corresponde con la zona más turística de la ciudad de Madrid y corrobora el sentido lógico de los precio más elevados.
+- La mayoría de alojamientos, un **73,93%**, son apartamentos enteros, con una disponibilidad anual elevada (**47,76%**). 
+- Por lo general, los alojamientos tienen un solo baño (71,86%) privado (84,09%).
+- Solo un 47% de los anuncios son de reserva automática. Esto implica que a los anfitriones les gusta saber y comprobar quién se va a hospedar en su alojamiento. 
+- El perfil de alojamientos principalmente se enfoca en viajes de corta duración (74,85%), para grupos reducidos o parejas ya que el número de huéspedes se centra entre 1 y 5 en el 86,64% del total de anuncios y la mayoría ofrece un único baño.
+
+## ➡️ PRÓXIMOS PASOS
+Para terminar de comprender el perfil de los anuncios en la ciudad de Madrid los próximos pasos del análisis son:
+- Análsis de los alojamientos por Distrito, considerando número de huéspedes, baños, precio y número de habitaciones. 
+- Relación entre variables categóricas y precio.
+- Revisión de los datos iniciales en relación a las reseñas, contacto con el orgien de los datos.
+- Breve informe por distrito describiendo el análisis realizado.
