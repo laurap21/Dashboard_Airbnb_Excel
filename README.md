@@ -12,7 +12,7 @@ El principal objetico es crear de forma visual un perfil de *Hosts* (anfitriones
 ## 📁 ESTRUCTURA DEL PROYECTO
 ```
 📂 Dashboard_Airbnb_Excel
-├──Data/
+├──Data_Analysis_Dashboard/                      # Carpeta que contiene los análisis realizados y los dashboards finales
 │   └── Airbnb Madrid Completo_Dashboards.xlxs   # Archivo con los dashboards finales
 │   └── Airbnb_Madrid_Analisis_Hosts.xlsx        # Análisis de los datos de los Hosts
 │   └── Airbnb_Madrid_Analisis_Listings.xlsx     # Análisis de los datosde los los Listings
@@ -29,9 +29,10 @@ El principal objetico es crear de forma visual un perfil de *Hosts* (anfitriones
 ├── Datos iniciales/
 │   └── listings.csv                             # Datos originales 
 │   └── listings (1).csv                         # Datos originales (1)
-├── Excel/
-│   └── Airbnb Madrid Completo.xlsx              # Archivo de trabajo (EDA, Dashboards)
-│   └── Airbnb Madrid Completo_V1.xlsx           # Archivo de trabajo (EDA, Dashboards) - V1 solventando errores
+├── Excel/           
+│   └── Airbnb Madrid Completo_V1.xlsx           # Archivo de trabajo (EDA, Dashboards) versión final
+│   └── OLD/                                     # Versiones antiguas descartadas
+│       └── Airbnb Madrid Completo.xlsx          # Archivo de trabajo (EDA, Dashboards) versión inicial - errores a solventar
 ├── Images/
 ├── Informe_analisis.md                          # Archivo .md con el informe del análisis
 ├── Informe_inicial.md                           # Archivo .md con el problema para análisis
