@@ -103,4 +103,5 @@ En cuanto a los anuncios, el perfil de alojamiento está orientado a parejas o g
 
 ## 👩🏼‍💻 AUTORES Y AGRADECIMIENTOS
 Este proyecto ha sido desarrollado enteramente por Laura Pomares Bleda como parte del curso **Data Analytics V3**. 
-Fecha de entrega: Julio 2025.
+- Fecha de entrega: Julio 2025.
+- Corrección: Agosto 2025.
