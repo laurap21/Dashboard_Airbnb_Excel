@@ -169,7 +169,7 @@ En el mapa siguiente se puede ver la distribución de la procedencia de los Host
 ### Host_response_time
 Esta variable está relacionada con la anterior variable numérica *Host_response_time_num*, ilustrando la misma información agrupada según el tiempo de respuesta de cada host.
 
-![](/Images/Host_response_time.png)
+![](/Images/Host_response_time2.png)
 
 En el gráfico superior se observa como el 62,5% de los hosts responde dentro de una hora, lo que indica un alto nivel de inmediatez. 
 
@@ -189,7 +189,7 @@ Esto les puede otorgar mayor visibilidad o mayor confianza por parte del cliente
 ### Host_verification
 Los anfitriones dentro de Airbnb tienen distintas posibilidad de contactar con los clientes y viceversa. 
 
-![Medios de verificación](/Images/Host_verification.png)
+![Medios de verificación](/Images/Host_verification2.png)
 
 La combinación más común corresponde a las verificaciones por correo electrónico (email) y por teléfono (78,95%). Un 7,7% adicional añade la verificación mediante correo profesional, lo que puede indicar un nivel extra de profesionalidad o vinculación corporativa.
 
@@ -200,7 +200,7 @@ Esta variable indica si la identidad del anfitrión está enteramente verificada
 
 Como se observa en el gráfico inferior, un 96,11% de los anfitriones están correctamente verificados por Airbnb, lo que indica alto nivel de confianza y seguridad para los huéspedes. 
 
-![Verificación de identidad](/Images/Identity_verification.png)
+![Verificación de identidad](/Images/Identity_verification2.png)
 
 
 ## 📅 Análisis temporal
@@ -209,10 +209,28 @@ Esta variable indica desde cuando el anfitrión pertenece a la plataforma de Air
 
 En la gráfica temporal se puede observar el crecimiento de uso y confianza depositado en la plataforma a lo largo de los años y cómo, en relación al turismo general, a la pandemia de 2019 y a distintos factores geopolíticos, ha ido evolucionando: 
 
-![Host since](/Images/Host_since.png)
+![Host since](/Images/Host_since2.png)
 
 ## 🗂️ Análisis bivariable
-Para entender la posible relación entre las distintas variables, se ha hecho un análisis de correlación. Previo a esto, ha sido necesario asignar a ciertas variables categóricas un valor numérico siguiendo un criterio lógico. Las variables a las que se les ha asignado un valor son las siguientes: *Host_response_time*, *Superhost* y *Host_identity_verified*.
+Para entender la posible relación entre las distintas variables, se ha hecho un análisis de correlación. Previo a esto, ha sido necesario asignar a ciertas variables categóricas un valor numérico siguiendo un criterio lógico. Las variables a las que se les ha asignado un valor son las siguientes: *Host_response_time*, *Superhost* y *Host_identity_verified*. Esto se ha hecho de la siguiente forma: 
+- Para la categoría *Host_response_time* se han considerado los valores estipulados en la siguiente tabla:
+
+    | Nombre inicial      | Valor asignado  |
+    |---------------------|-----------------|
+    | N/A                 | 0               |
+    | whithin an hour     | 4               |
+    | whithin a few hours | 3               |
+    | a few fays or more  | 2               |
+    | whithin a day       | 1               |
+
+- De igual manera, para las variables *Superhost* y *Host_identity_verified* se han asignado valores de la siguiente forma:
+
+    | Nombre inicial      | Valor asignado  |
+    |---------------------|-----------------|
+    | False               | 1               |
+    | Unknown             | 0               |
+    | True                | 2               |
+
 
 La matriz resultante es la siguiente: 
 ![Matriz Correlaciones](/Images/Matriz_correlaciones_Hosts.png)
@@ -242,7 +260,7 @@ La variabilidad de la muestra es moderdada, de acuerdo a la desviación estánda
 El coeficiente de asimetría positivo indica que la distribución está fuertemente sesgada a la derecha, es decir, hay pocos alojamientos con capacidades muy altas que elevan la media (outliers). En cuento a la curtosis, indica que la distribución es leptocúrtica,  (muchos alojamientos se concentran cerca de la moda o mediana, existiendo valores extremos como se mencionaba anteriormente).
 
 En la imagen siguiente se puede apreciar la forma de la distribución: 
-![Num. Accommodates](/Images/Num_Accommodates.png)
+![Num. Accommodates](/Images/Num_Accommodates2.png)
 
 ### Num. Bathrooms
 En el estudio de esta variable es importante destacar que los valores con decimales tipo X,5 indican la presencia de un asep (sin ducha ni bañera), mientras que los valores enteros representan baños completos.
@@ -259,7 +277,7 @@ El valor de la desviación estandar señala que hay poca variablidad en el núme
 
 La asimetría de esta distribución es positiva, con una larga cola a la derecha debido a la presencia de unos pocos alojamientos con muchos baños. La curtosis indica una distribución extremadamente leptocúrtica: la mayoría de alojamientos se agrupan muy fuertemente alrededor del valor central. De nuevo, esto indica que hay valores extremos.
 
-![Num. Bathrooms](/Images/Num_Bathrooms.png)
+![Num. Bathrooms](/Images/Num_Bathrooms2.png)
 
 ### Bedrooms
 - Media: 1,38 | Mediana: 1 | Moda: 1
@@ -272,7 +290,7 @@ La desviación estándar muestra una variabilidad moderada, la mayoría de aloja
 
 El coeficiente de asimetría indica que ésta es positiva, con una cola larga hacia la derecha. Esto concuerda con la presencia de outliers o pocos alojamientos con muchas habitaciones. De igual manera, la distribución extremadamente leptocúrtica, confirma la concentración alrededor del valor central junto a una mayor frecuencia de valores atípicos.
 
-![Bedrooms](/Images/Bedrooms.png)
+![Bedrooms](/Images/Bedrooms2.png)
 
 ### Beds
 - Media: 1,98 | Mediana: 2 | Moda: 1
@@ -285,7 +303,7 @@ Un rango elevado, de 0 a 40 camas, revela la existencia de propiedades excepcion
 
 El coeficiente de asimetría altamente positivo indica que la mayoría de alojamientos tienen pocas camas aunque existen algunos con un elevado número de camas. La curtosis, extremadamente leptocúrtica, evidencia que los datos están fuertemente concentrados alrededor de los valores bajos, pero con colas largas que reflejan la presencia de numerosos vazlores atípicos.
 
-![Beds](/Images/Beds.png)
+![Beds](/Images/Beds2.png)
 
 ### Price_€
 - Media: 138,89€ | Mediana: 97€ | Moda: 80€
@@ -298,7 +316,7 @@ La alta desviación estándar indica la gran variabilidad de los precios, tambi�
 
 La asimetría, de nuevo altamente positiva, indica que la gran mayoría de precios son bajos o moderados pero existen unos pocos alojamientos lujosos con precios muy elevados (o atípicos, como se comenta en el párrafo anterior). De igual manera, la curtosis letpocúrtica, evidencia la presencia de valores extremos.
 
-![Price](/Images/Price.png)
+![Price](/Images/Price2.png)
 
 ### Minimum_nights
 Esta variable está doblemente analizada, a nivel numérico y a nivel categórico, ya que se ha clasificado en niveles de exigencia según el número de noches (explicado anteriormente).
