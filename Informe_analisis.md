@@ -3,7 +3,7 @@ Curso: Data Analytics V3 | Proyecto: Dashboard &amp; Análisis de Datos
 
 Este proyecto tiene como objetivo analizar los datos abiertos de Airbnb en la ciudad de Madrid. A lo largo del proyecto se realiza una transformación y limpieza de datos, análisis descriptivo, creación de un dashboard interactivo y elaboración de un informe explicativo con las principales conclusiones.
 
-El informe inicial con el problema de análisis planteado es el siguiente: [Informe Inicial](Informe_inicial.md) y el README: [README](README.md).
+El informe inicial con el problema de análisis planteado es el siguiente: [Informe Inicial](Informe_inicial.md), y el README: [README](README.md).
 
 El objetivo principal tras el análisis es crear un dashboard visual de los perfiles de los *hosts* (anfitriones) y de los *listings* (anuncios) para entender la situación de la oferta actual en Madrid.
 
@@ -13,7 +13,7 @@ El objetivo principal tras el análisis es crear un dashboard visual de los perf
 ## 🧠 Comprensión general de los datos 
 Se ha hecho el análisis de dos archivos llamados “listings.csv” y "listings (1). csv" obtenidos de la web de datos abiertos de Airbnb. Finalmente, solo se ha utilizado uno de los dos archivos, ya que el primero contiene mayor información e incluye la del segundo archivo.
 
-Se trata de un archivo de 79 columnas y 25.289 filas con información sobre los anfitriones (hosts) y sus anuncios de alojamientos en la ciudad de Madrid. Por lo tanto, se va a proceder a hacer **dos análisis**: uno sobre los hosts que tiene alojamientos en la Comunidad de Madrid y otro sobre los propios alojamientos.
+Se trata de un archivo de 79 columnas y 25.289 filas con información sobre los anfitriones (hosts) y sus anuncios de alojamientos en la ciudad de Madrid. Por lo tanto, se va a proceder a hacer **dos análisis**: uno sobre los *hosts* que tiene alojamientos en la Comunidad de Madrid y otro sobre los propios alojamientos.
 
 ## 🧹 Transformación y limpieza de los datos
 ### Eliminación de columnas irrelevantes
@@ -38,8 +38,8 @@ Para la limpieza de los datos, se ha analizado columna a columna la calidad de l
 4.	**Unificación de valores**: 
     - En la columna *host_location_initial* se observa gran variedad de localizaciones. El valor significativo para el análisis es solo el país, por lo que se crea la columna *Host_location* para unificar y limpiar los valores utilizando distintas fórmulas de Excel. En los valores en blanco se indica "Unknown".
     - La columna *host_verification_initial* contiene información sobre los métodos de verificación de cada host. Se ha hecho una limpieza visual de los datos, eliminando los corchetes y las comillas y creando una nueva columna *Host_verification*. También se ha añadido el valor "no verification" en las casillas vacías.
-    - En la columna *Superhost* se han completado las posibles opciones (True, False) y se ha incluido el valor "unknown" para los espacios en blanco.
-    - Se ha procedido de igual manera para las columnas *Host_identity_verified* e *Instant_bookable*-
+    - En la columna *Superhost* se han completado las posibles opciones (True, False) y se ha incluido el valor "Unknown" para los espacios en blanco.
+    - Se ha procedido de igual manera para las columnas *Host_identity_verified* e *Instant_bookable*.
     - Se ha dividido el valor de la columna "Bathrooms" entre 10, de acuerdo a la explicación inicial de la columna en la que, por ejemplo, el valor 10 indica 1 baño y el valor 15 un baño y un aseo, es decir, 1,5 baños. Para mostrarlo, se ha creado la columna *Num. Bathrooms*.
     - La columna *Bathrooms_text* amplía la información del número de baños indicando además si son compartidos o privados. En la columna *Shared_bathrooms* se ha extraído esta información complementaria.
     - En la columna *Price_€* se ha eliminado el símbolo del dólar, se ha reemplazado el punto por una coma y se ha específicado en el formato de la celda que son euros (€), ya que de acuerdo con la descripción de los datos esta corresponde a "daily price in local currency".
@@ -95,7 +95,7 @@ Tras esta limpieza y transformación de los datos, se crea un fichero csv con el
 # 👩🏼‍💼 Análisis Descriptivo Hosts
 Para el análisis del perfil de los Hosts o Anfitriones de Airbnb, se eliminan las columnas relativas a los Listings o Anuncios publicados.
 
-Del datasheet filtrado y transformado de fases anteriores que contaba con todos los datos, se ha hecho un paso de transformación más, eliminando los *Host_ID* duplicados. Es decir, para el análisis del perfil de Hosts en Madrid se cuenta con un datasheet de 11 columnas y 7.896 filas.
+Del datasheet filtrado y transformado de fases anteriores que contaba con todos los datos, se ha hecho un paso de transformación más, eliminando los *Host_ID* duplicados. Es decir, para el análisis del perfil de Hosts en Madrid se cuenta con un datasheet de **11 columnas** y **7.896 filas**.
 
 ## 🔢 Análisis de las variables numéricas
 ### **Host_response_rate_num**
@@ -111,7 +111,7 @@ La media indica que en promedio los hosts responde al 91,7% de las consultas.
 
 La mediana y la moda son ambas 1, lo que indica que más de la mitad son hosts que responden al 100% de los mensajes (además de ser el valor más frecuente).
 
-La desviación estándar indica una variabilidad moderada. La curtosis indica una distribución leptocúrtica con muchos valores concentrados alrededor del 1y algunos casos extremos (ouliters). El coeficiente de asimetría, fuertemente negativo, indica que existe una cola hacia la izquierda, es decir, la mayoría de hosts tienen tasas de respuesta cercanas a 1 y hay unos pocos hosts con tasas muy bajas.
+La desviación estándar indica una variabilidad moderada. La curtosis indica una distribución leptocúrtica con muchos valores concentrados alrededor del 1 y algunos casos extremos (ouliters). El coeficiente de asimetría, fuertemente negativo, indica que existe una cola hacia la izquierda, es decir, la mayoría de hosts tienen tasas de respuesta cercanas a 1 y hay unos pocos hosts con tasas muy bajas.
 
 Como conclusión, se puede afirmar que los anfitriones (o hosts) en Madrid son muy diligentes respondiendo, de acuerdo a la altísima tasa de respueta. La asimetría negativa y la curtosis elevada confirman una distribución fuertemente concentrada en el valor máximo.
 
@@ -129,16 +129,16 @@ En este caso, la desviación existe pero no es extrema. El valor de la asimetrí
 
 Aunque son minoría (6,4%), existen anfitriones que no han aceptado ninguna solicitud (indicado por el valor mínimo 0). Esto puede significar que está inactivos o tienen los anuncios en mal estado.
 
-En general, se observa una tendendia a mantener alta disponibiliad de respuesta por parte de los hosts para mejor la visibilidad de sus anuncios y reforzar la reputación en la plataforma.
+En general, se observa una tendendia a mantener alta disponibiliad de respuesta por parte de los *hosts* para mejor la visibilidad de sus anuncios y reforzar la reputación en la plataforma.
 
 ### **Host_listings_count**
 - Media: 5,28 | Mediana: 1 | Moda: 1
 - Máximo: 3.311 | Desviación estándar: 52,55
 - Asimetría: 41,77 | Curtosis: 2.232,58
 
-De acuerdo a los datos estadísticos, en promedio cada host tiene unos 5 listings (anuncios). Sin embargo, este valor se ve distorsionado por los valores extremos existentes (outliers), pues el rango de valores es de 1 a 3311.
+De acuerdo a los datos estadísticos, en promedio cada host tiene unos 5 *listings* (anuncios). Sin embargo, este valor se ve distorsionado por los valores extremos existentes (outliers), pues el rango de valores es de 1 a 3311.
 
-A través de la mediana y la moda se aprecia como la mitad de los host solo tiene un listing, siendo también el valor más repetido.
+A través de la mediana y la moda se aprecia como la mitad de los *host* solo tiene un *listing*, siendo también el valor más repetido.
 
 La distribución de la muestra es leptocúrtica: hay muchos valores cerca de la media pero altísimos valores extremos. La asimetría es positiva, hay muchos valores bajos (en concordancia con la mediana y la moda) y pocos valores muy altos. Esto, junto con la extrema asimetría (41,77) confirma que hay pocos valores que alejan la distribución de la normalidad.
 
@@ -149,34 +149,34 @@ La distribución de la muestra es leptocúrtica: hay muchos valores cerca de la 
 
 Este valor indica el total de *listings* (o anuncios) de un *host* (anfitrión) en el momento de scrape en toda la página de Aribnb.
 
-El promedio de los hosts que tienen anuncios en Madrid, tiene en total unos 8 anuncios. Sin embargo, como para el resto de variables, no es un valor representativo, pues la mediana indica un valor de 2 y la moda de 1. Es decir, la mitad de los anfitriones tiene 2 o menos anuncios, siendo 1 el valor más común.  Con esto, se puede afirmar que Airbnb tiene un fuerte componente de hosts particulares.
+El promedio de los *hosts* que tienen anuncios en Madrid, tiene en total unos 8 anuncios. Sin embargo, como para el resto de variables, no es un valor representativo, pues la mediana indica un valor de 2 y la moda de 1. Es decir, la mitad de los anfitriones tiene 2 o menos anuncios, siendo 1 el valor más común.  Con esto, se puede afirmar que Airbnb tiene un fuerte componente de hosts particulares.
 
 La desviación estándar indica que, en este caso, sí hay valores muy alejados del promedio. La curtosis leptocúrtica y extrema refuerza esta afirmación: muchos valores bajos y unos pocos outliers enormes, lo que indica una distribución extremadamente sesgada a la derecha (asimetría positiva).
 
 
 ## 📈 Análisis de las variables categóricas
 ### Host_location
-Esta variable indica el país de procedencia del host. Cabe destacar que el 33,5% de los hosts han preferido no indicar su procedencia, por lo que han sido clasificados como "unknown".
+Esta variable indica el país de procedencia del *host*. Cabe destacar que el 33,5% de los hosts han preferido no indicar su procedencia, por lo que han sido clasificados como "Unknown".
 
 Del resto de datos disponible se destaca lo siguiente: 
 - España concentra el 75% de los hosts, con 5.254 registros.
 - Existe mucha diferencia con los siguientes países más representados: Estados Unidos (0,8%), Reino Unido (0,6%), Francia (0,34%) y México (0,26%).
 
-En el mapa siguiente se puede ver la distribución de la procedencia de los Hosts:
+En el mapa siguiente se puede ver la distribución de la procedencia de los *hosts*:
 
 ![Mapa de localización de los Hosts](/Images/Hosts_map.png)
 
 ### Host_response_time
-Esta variable está relacionada con la anterior variable numérica *Host_response_time_num*, ilustrando la misma información agrupada según el tiempo de respuesta de cada host.
+Esta variable está relacionada con la anterior variable numérica *Host_response_time_num*, ilustrando la misma información agrupada según el tiempo de respuesta de cada *host*.
 
 ![](/Images/Host_response_time2.png)
 
-En el gráfico superior se observa como el 62,5% de los hosts responde dentro de una hora, lo que indica un alto nivel de inmediatez. 
+En el gráfico superior se observa como el 62,5% de los *hosts* responde dentro de una hora, lo que indica un alto nivel de inmediatez. 
 
-Agrupando los hosts que responden en pocas horas (13,4%) y los que responde dentro del mismo día (6,9%), el 82,8% de los hosts responde en menos de un día. Esto favorece el uso de Airbnb y mejor la confianza del cliente con respecto a los anfitriones. 
+Agrupando los *hosts* que responden en pocas horas (13,4%) y los que responde dentro del mismo día (6,9%), el 82,8% de los *hosts* responde en menos de un día. Esto favorece el uso de Airbnb y mejor la confianza del cliente con respecto a los anfitriones. 
 
 ### Superhost
-Del total de anfitriones analizados en la muestra para Madrid, tan solo el 33,68% está considerado superhost para Airbnb. Esto quiere decir que al menos 1 de cada 3 anfitriones cumple los requesitos específicos de Airbnb para alcanzar esta categoría, que son:
+Del total de anfitriones analizados en la muestra para Madrid, tan solo el 33,68% está considerado *superhost* para Airbnb. Esto quiere decir que al menos 1 de cada 3 anfitriones cumple los requesitos específicos de Airbnb para alcanzar esta categoría, que son:
 1. Tasa alta de respuesta: contestar al menos el 90% de los mensajes en 24 horas.
 2. Tasa baja de cancelación: mantener las cancelaciones al mínimo (1% o menos).
 3. Calificación excelente: tener una media de 4,8 estrellas en las evaluaciones.
@@ -184,7 +184,7 @@ Del total de anfitriones analizados en la muestra para Madrid, tan solo el 33,68
 
 Esto les puede otorgar mayor visibilidad o mayor confianza por parte del cliente.
 
-*Debido a la falta de información inicial para este proyecto con respecto a las variables necesarias para alcanzar el rango *Superhost* no se va a analizar en detalle la relación con las mismas.*
+* *Debido a la falta de información inicial para este proyecto con respecto a las variables necesarias para alcanzar el rango *Superhost* no se va a analizar en detalle la relación con las mismas.*
 
 ### Host_verification
 Los anfitriones dentro de Airbnb tienen distintas posibilidad de contactar con los clientes y viceversa. 
@@ -207,7 +207,7 @@ Como se observa en el gráfico inferior, un 96,11% de los anfitriones están cor
 ### Host_since
 Esta variable indica desde cuando el anfitrión pertenece a la plataforma de Airbnb. 
 
-En la gráfica temporal se puede observar el crecimiento de uso y confianza depositado en la plataforma a lo largo de los años y cómo, en relación al turismo general, a la pandemia de 2019 y a distintos factores geopolíticos, ha ido evolucionando: 
+En la gráfica temporal se puede observar el crecimiento de uso y confianza depositado en la plataforma a lo largo de los años y cómo, en relación al turismo general, a la pandemia de 2019/2020 y a distintos factores geopolíticos, ha ido evolucionando: 
 
 ![Host since](/Images/Host_since2.png)
 
@@ -235,14 +235,14 @@ Para entender la posible relación entre las distintas variables, se ha hecho un
 La matriz resultante es la siguiente: 
 ![Matriz Correlaciones](/Images/Matriz_correlaciones_Hosts.png)
 
-Se puede observar que no existe gran correlación entre estas variables salvo, cómo es lógico, las variables *Host_response_time* y *Host_response_rate_num* ya que hablan de lo mismo. De igual manera, se ve que las variables que hacen referencia al ratio de tiempo de respuesta y de aceptación tienen una correlación elevada. Los Hosts con mayor ratio de aceptación son los que menor tiempo de respuesta tienen (es decir, los que mayor porcentaje de respuesta tienen).
+Se puede observar que no existe gran correlación entre estas variables salvo, cómo es lógico, las variables *Host_response_time* y *Host_response_rate_num* ya que hablan de lo mismo. De igual manera, se ve que las variables que hacen referencia al ratio de tiempo de respuesta y de aceptación tienen una correlación elevada. Los *Hosts* con mayor ratio de aceptación son los que menor tiempo de respuesta tienen (es decir, los que mayor porcentaje de respuesta tienen).
 
 De igual manera, se observa una correlación positiva muy cerana al 1 en las variables *Hos_listing_count* y *Host_total_listings_count*, lo que indica que los *hosts* o anfitriones con más anuncios (o *listings*) en Madrid son también los que más anuncios tienen en toda la web de Airbnb. Esto quiere decir que existe una alta probabilidad de que sean usurarios profesionales en lugar de particulares.  
 
 # 🛏️ Análisis Descriptivo Listings
-Para el análisis del perfil de los Listings o Anuncios de Airbnb, se eliminan las columnas relativas a los Hosts o Anfitriones.
+Para el análisis del perfil de los *Listings* o Anuncios de Airbnb, se eliminan las columnas relativas a los *Hosts* o Anfitriones.
 
-Del datasheet filtrado y transformado de fases anteriores que contaba con todos los datos, se ha hecho un paso de transformación más, extrayendo únicamente el año para las *reviews*, tanto para la primera (*First_review*) como para la última (*Last_review*). Es decir, para el análisis de los Litings tipo en Madrid se cuenta con un datasheet de 23 columnas y 19.275 filas.
+Del datasheet filtrado y transformado de fases anteriores que contaba con todos los datos, se ha hecho un paso de transformación más, extrayendo únicamente el año para las *reviews*, tanto para la primera (*First_review*) como para la última (*Last_review*). Es decir, para el análisis de los *Litings* tipo en Madrid se cuenta con un datasheet de 23 columnas y 19.275 filas.
 
 ## 🔢 Análisis de las variables numéricas
 ### Num. Accommodates
@@ -263,7 +263,7 @@ En la imagen siguiente se puede apreciar la forma de la distribución:
 ![Num. Accommodates](/Images/Num_Accommodates2.png)
 
 ### Num. Bathrooms
-En el estudio de esta variable es importante destacar que los valores con decimales tipo X,5 indican la presencia de un asep (sin ducha ni bañera), mientras que los valores enteros representan baños completos.
+En el estudio de esta variable es importante destacar que los valores con decimales tipo X,5 indican la presencia de un aseo (sin ducha ni bañera), mientras que los valores enteros representan baños completos.
 
 - Media: 1,29 | Mediana: 1 | Moda: 1
 - Mínimo: 0 | Máximo: 15 | Desviación estándar: 0,63
@@ -310,7 +310,7 @@ El coeficiente de asimetría altamente positivo indica que la mayoría de alojam
 - Mínimo: 8€ | Máximo: 23.124€ | Desviación estándar: 433,61€
 - Asimetría: 31,29 | Curtosis: 1.248,21
 
-La media indica el precio promedio por noche de la muestra, que en este caso no es representativo dada la gran variabilidad. La mediana, significativamente menos a la media revela una distribución que no es simétrica y confirma que la mayoría de los precios tienen precios por debajo del promedio. La moda, el precio más frecuente, muestra el punto de máxima concentración. Es decir, a pesar de que el promedio está alrededor de 139€, la mayoría de los alojamientos se sitúan más cerca de 80-100€.
+La media indica el precio promedio por noche de la muestra, que en este caso no es representativo dada la gran variabilidad. La mediana, significativamente menor a la media revela una distribución que no es simétrica y confirma que la mayoría de los precios tienen precios por debajo del promedio. La moda, el precio más frecuente, muestra el punto de máxima concentración. Es decir, a pesar de que el promedio está alrededor de 139€, la mayoría de los alojamientos se sitúan más cerca de 80-100€.
 
 La alta desviación estándar indica la gran variabilidad de los precios, también reflejada en el gran rango de valores (8 - 23.124€). Esto se puede deber a la existencia de propiedades muy exclusivas o valores erroneos/atípicos. Al no conocer el origen de datos y no poder comprobar si son correctos o no, se han considerado válidos pero extremadamente atípicos. Se debería realizar un análisis en profundidad de esto.
 
@@ -349,7 +349,7 @@ El coeficiente de asimetría indica una ligera asimetría positiva, con una cola
 ![Max_nights](/Images/Max_nights2.png)
 
 ### Availability_365
-Esta variable está doblemente analizada, a nivel numérico y a nivel categórico, ya que se ha clasificado en niveles de exigencia según el número de noches (explicado anteriormente).
+De igual forma que la variable anterior, esta variable se analiza a nivel numérico y a nivel categórico, ya que se ha clasificado en niveles de exigencia según el número de noches (explicado anteriormente).
 
 - Media: 173,16 | Mediana: 179 | Moda: 0
 - Mínimo: 0 | Máximo: 365 | Desviación estándar: 126,62
@@ -369,7 +369,7 @@ El coeficiente de asimetría es prácticamente 0, lo que indica una distribució
 - Mínimo: 0 | Máximo: 1.080 | Desviación estándar: 96,13
 - Asimetría: 3,25 | Curtosis: 14,49
 
-La media indica que en promedio los anuncios han recibidio alrededor de 55-56 opinones. La medaiana, de 16 reseñas, muestra que la mitad de los alojamientos tienen 16 o menos reseñas, mucho menor que la media. Esto refleja la influencia de algunos anuncios con altísimos números de reseñas. La moda vuelve a ser igual a 0, lo que indica que muchos alojamientos no tienen reseñas todavía (anuncios nuevos o con baja demanda).
+La media indica que en promedio los anuncios han recibidio alrededor de 55-56 opinones. La mediaana, de 16 reseñas, muestra que la mitad de los alojamientos tienen 16 o menos reseñas, mucho menor que la media. Esto refleja la influencia de algunos anuncios con altísimos números de reseñas. La moda vuelve a ser igual a 0, lo que indica que muchos alojamientos no tienen reseñas todavía (anuncios nuevos o con baja demanda).
 
 La desviación estándar es muy alta en comparación con la media, evidenciando una dispersión considerable en el número de reseñas entre anuncios. Esto queda respaldado por el amplio rango de valores.
 
@@ -383,7 +383,7 @@ Esta variable muestra en que distrito de la ciudad de Madrid se encuentra cada a
 
 ![Neighbourhood](/Images/Neighbourhood.png)
 
-El 43% de los alojamientos se encuentran ubicados en el distrito centro, desmarcándose del resto de ubicaciones, que oscilan entre un 0,3% y un 7%. Las zonas mejor comunicadas o más céntrica, como Tetúan o Salamanca, se corresponden con estos porcentajes cercanos a 7% mientras que cuánto más alejados o peor comunicados están, disminuye la oferta.
+El 43% de los alojamientos se encuentran ubicados en el distrito Centro, desmarcándose del resto de ubicaciones, que oscilan entre un 0,3% y un 7%. Las zonas mejor comunicadas o más céntrica, como Tetúan o Salamanca, se corresponden con estos porcentajes cercanos a 7% mientras que cuánto más alejados o peor comunicados están, disminuye la oferta.
 
 ### Property_type y room_type
 Para analizar el tipo de alojamiento o de estancia existen dos variables: 
@@ -464,17 +464,17 @@ Para el perfil de **Hosts**:
 - En el momento de extracción de la muestra de la web de datos abiertos de Airbnb existían un total de **7.896** hosts o anfitriones.
 - Tan solo el 27% del total de anfitriones tiene el calificativo de *Superhost*, para lo que hay que cumplir una serie de requisitos de Airbnb. Sin embargo, el 94% está correctamente verificado por la plataforma. Esto puede deberse a la presencia de anfitriones nuevos que aún no han completado el proceso de verificación o a cambios en sus perfiles que de igual manera no han sido comprobados del todo.
 - El **49,81%** de los mismos tienen **entre 1 y 5 listings o anuncios**, lo que implica que no es su actividad profesional principal. En cambio, un **21,45%** de los anfitriones tiene **más de 50 anuncios publicados** (aunque no necesariamente disponibles), lo que lleva a la conclusión de que pueden ser cuentas profesionales cuya fuente de ingresos principal sea la gestión de alojamientos en Airbnb.
-- Para mejorar la experiencia del usuario, existen dos variables principales a analizar: los medios de verificación y comunicación y el tiempo de respuesta. el **75,69%** de los anfitriones responden y están verificados por **correo electrónico y teléfono**, siendo los medios más comunes empleados por la población. El **69%** de los anfitriones responde a las peticiones en **menos de una hora**. 
+- Para mejorar la experiencia del usuario, existen dos variables principales a analizar: los medios de verificación y comunicación y el tiempo de respuesta. El **75,69%** de los anfitriones responden y están verificados por **correo electrónico y teléfono**, siendo los medios más comunes empleados por la población. El **69%** de los anfitriones responde a las peticiones en **menos de una hora**. 
 - Por último, la gran mayoría de anfitriones en Madrid procede de España, pero hay una gran varibilidad de lugares de procedencia de los anfitriones, destacando por detás de España, EEUU, Reino Unido, México y Francia.
 
 Para el perfil de los **Listings**:
-- Existe un total de 19.274 anuncios publicados.
-- El precio medio es de 138,89€. Este precio varía de forma significativa según el distrito en el que se encuentra el alojamiento. Por ejemplo, para el distrito centro, el precio medio es de 150€ mientras que para Carabanchel es de 79€. La moda y la mediana, de 97€ y 80€ respectivamente, indican que aunque hay anuncios más caros, el precio más representativo ronda los 80-100€.
+- Existe un total de **19.274 anuncios publicados**.
+- El precio medio es de **138,89€**. Este precio varía de forma significativa según el distrito en el que se encuentra el alojamiento. Por ejemplo, para el distrito Centro, el precio medio es de 150€ mientras que para Carabanchel es de 79€. La moda y la mediana, de 97€ y 80€ respectivamente, indican que aunque hay anuncios más caros, el **precio más representativo** ronda los **80-100€**.
 - El **43%** de los alojamientos se concentra en el **distrito Centro**, que se corresponde con la zona más turística de la ciudad de Madrid y corrobora el sentido lógico de los precio más elevados.
 - La mayoría de alojamientos, un **73,93%**, son apartamentos enteros, con una disponibilidad anual elevada (**47,76%**). 
-- Por lo general, los alojamientos tienen un solo baño (71,86%) privado (84,09%).
-- Solo un 47% de los anuncios son de reserva automática. Esto implica que a los anfitriones les gusta saber y comprobar quién se va a hospedar en su alojamiento. 
-- El perfil de alojamientos principalmente se enfoca en viajes de corta duración (74,85%), para grupos reducidos o parejas ya que el número de huéspedes se centra entre 1 y 5 en el 86,64% del total de anuncios y la mayoría ofrece un único baño.
+- Por lo general, los alojamientos tienen **un solo baño (71,86%) privado (84,09%)**.
+- Solo un **47%** de los anuncios son de reserva automática. Esto implica que a los anfitriones les gusta saber y comprobar quién se va a hospedar en su alojamiento. 
+- El perfil de alojamientos principalmente se enfoca en viajes de **corta duración (74,85%)**, para grupos reducidos o parejas ya que el **número de huéspedes** se centra **entre 1 y 5** en el 86,64% del total de anuncios y la mayoría ofrece un único baño.
 
 ## ➡️ PRÓXIMOS PASOS
 Para terminar de comprender el perfil de los anuncios en la ciudad de Madrid los próximos pasos del análisis son:
