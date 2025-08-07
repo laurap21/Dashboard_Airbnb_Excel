@@ -331,7 +331,7 @@ La desviación estándar refleja una variabilidad muy alta en los requisitos mí
 
 El coeficiente de asimetría positivo significa que la mayoría exige estancias cortas, confirmado por la curtosis leptocúrtica.
 
-![Minimum_nights](/Images/Min_nights.png)
+![Minimum_nights](/Images/Min_nights2.png)
 
 ### Maximum_nights
 Esta variable está doblemente analizada, a nivel numérico y a nivel categórico, ya que se ha clasificado en niveles de exigencia según el número de noches (explicado anteriormente).
@@ -346,7 +346,7 @@ La desviación estándar indica una dispersión muy amplia, casi tan grande como
 
 El coeficiente de asimetría indica una ligera asimetría positiva, con una cola que se extiende hacia valores más altos, pero mucho menos pronunciada que en variables anteriores. La curtosis, en este caso platicúrtica, implica que los valores están más dispersos y hay menos concentración extrema en torno a la media, pese a existir el pico en 365.
 
-![Max_nights](/Images/Max_nights.png)
+![Max_nights](/Images/Max_nights2.png)
 
 ### Availability_365
 Esta variable está doblemente analizada, a nivel numérico y a nivel categórico, ya que se ha clasificado en niveles de exigencia según el número de noches (explicado anteriormente).
@@ -361,7 +361,7 @@ La desviación estándar, bastante alta, muestra una gran diversidad en la dispo
 
 El coeficiente de asimetría es prácticamente 0, lo que indica una distribución simétrica, sin sesgo claro hacia mayor o menor disponibilidad. La curtosis indica una distribución platicúrtica, con menos datos concentrados cerca del promedio. Esto sugiere que la disponibilidad se dispersa de forma más uniforme entre los diferentes valores, sin aglomerarse en torno a un único rango.
 
-![Availability](/Images/Availability.png)
+![Availability](/Images/Availability2.png)
 
 ### Number_of_reviews
 
@@ -401,19 +401,19 @@ Por otro lado, para el usuario es más importante saber al tipo de estancia conc
 ### Shared_bathrooms
 Otra variable caracterísitica de los alojamientos de alquiler es la posibilidad o no de tener baño privado. En la gráfica siguiente se observa que un 84% de los anuncios ofrecen baño privado en sus alojamientos, mientras que tan solo en un 16% de los mismos el baño sería compartido.
 
-![Shared_bathrooms](/Images/Shared_bathrooms.png)
+![Shared_bathrooms](/Images/Shared_bathrooms2.png)
 
 ### Minimum_night_category
 Como comentado anteriormente, la variable numérica *Minimum_nights* se ha categorizado en distintas opciones en función de un rango de número de noches para así hacer más fácil el análisis y la comprensión del perfil de anuncios disponibles.
 
-![Min_nights_cat](/Images/Min_nights_cat.png)
+![Min_nights_cat](/Images/Min_nights_cat2.png)
 
 Se puede apreciar como el mínimo de noches categorizado corresponde a *Very short stay* - estancias muy cortas - con un 75%, es decir, la mayoría de los anuncios no necesitan un mínimo de noches de reserva elevado.
 
 ### Maximum_nights_category
 De igual manera que con la variable anterior, se han categorizado los valores de esta variable para mejorar la visibilidad de la muestra.
 
-![Max_night_cat](/Images/Max_nights_cat.png)
+![Max_night_cat](/Images/Max_nights_cat2.png)
 
 En este caso, y como se ha mencionado anteriormente, se ha considerado que los valores por encima de 365 implican que no hay límite significativo real en la reserva ya que podría ser considerado un alquiler estándar. Se aprecia, pues, que más de la mayoría de los alojamientos admite reservas largas, de hasta 1 año (55,33%) mientras que las reservas limitadas a estancias cortas o medias son escasas en comparación (7,34%).
 
@@ -424,24 +424,24 @@ Este gráfico muestra que el 47% de los alojamientos están disponibles al menos
 
 La categoría *Low availability* puede reflejar como el 26% de los alojamientos solo están disponibles hasta 3 meses al año, lo que puede estar relacionado con periodos vacacionales, por ejemplo.
 
-![Availability_cat](/Images/Availability_cat.png)
+![Availability_cat](/Images/Availability_cat2.png)
 
 ### Instant_bookable
 Esta categoría muestra la facilidad o no de reservar automáticamente un alojamiento, sin pasar por la aprobación del *host* o anfitrión. 
 
 En este caso los porcentajes son muy similares, siendo ligeramente mayor el número de alojamientos que necesitan la aprocación específica de su anfitrión. 
 
-![Instant_bookable](/Images/Instant_bookable.png)
+![Instant_bookable](/Images/Instant_bookable2.png)
 
 ## 🗂️ Análisis bivariable
 En la matriz de correlaciones de los anuncios (o *listings*) se observa que puede existir una posible correlación entre varias variables.
 
-![Matriz correlaciones](/Images/Matriz_correlaciones_Listings.png)
+![Matriz correlaciones](/Images/Matriz_correlaciones_Listings2.png)
 
 **Correlaciones fuertes**:
 - Existe una alta correlación entre el tipo de habitación (*room_type*) y si el baño es compartido o no (*shared_bathrooms*). En la gráfica comparativa se puede observar como en los apartamentos completos (*entire home/apt*) el baño, lógicamente, siempre es privado, mientras que para para habitaciones compartidas, el baño siempre será compartido. También se puede observar como las habitaciones de hotel son el tipo de alojamiento menos ofrecido (como se vio en el análisis anterior) y que para las habitaciones privadas, los porcentaje correspondientes a baño privado y compartido son muy similares.
 
-![Shared_Bathrooms vs Room_type](/Images/Shared_bathrooms_vs_room_type.png)
+![Shared_Bathrooms vs Room_type](/Images/Shared_bathrooms_vs_room_type2.png)
 
 - También existe una alta correlación entre el número de camas (*beds*) y el número de huéspedes (*Num. Accommodates*). Es algo lógico, ya que cuántas más camas, más personas pueden quedarse en el alojamiento.
 
@@ -455,7 +455,7 @@ En la matriz de correlaciones de los anuncios (o *listings*) se observa que pued
 **Otras correlaciones**
 Una vez analizadas todas las variables y de cara a la realización del dashboard, se ha decidido que la segmentación principal sea por barrio. En el gráfico siguiente se muestra el precio medio por barrios, evidenciando que los más caros son los mejores ubicados en cuanto a turismo y comodidad.
 
-![Precio medio](/Images/Precio_medio_barrio.png)
+![Precio medio](/Images/Precio_medio_barrio2.png)
 
 ## 🏁 CONCLUSIONES
 Una vez analizados los datos se puedes extraer las siguientes conclusiones.
