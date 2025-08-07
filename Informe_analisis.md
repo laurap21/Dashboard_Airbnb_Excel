@@ -436,7 +436,7 @@ En este caso los porcentajes son muy similares, siendo ligeramente mayor el núm
 ## 🗂️ Análisis bivariable
 En la matriz de correlaciones de los anuncios (o *listings*) se observa que puede existir una posible correlación entre varias variables.
 
-![Matriz correlaciones](/Images/Matriz_correlaciones_Listings2.png)
+![Matriz correlaciones](/Images/Matriz_correlaciones_Listings.png)
 
 **Correlaciones fuertes**:
 - Existe una alta correlación entre el tipo de habitación (*room_type*) y si el baño es compartido o no (*shared_bathrooms*). En la gráfica comparativa se puede observar como en los apartamentos completos (*entire home/apt*) el baño, lógicamente, siempre es privado, mientras que para para habitaciones compartidas, el baño siempre será compartido. También se puede observar como las habitaciones de hotel son el tipo de alojamiento menos ofrecido (como se vio en el análisis anterior) y que para las habitaciones privadas, los porcentaje correspondientes a baño privado y compartido son muy similares.
