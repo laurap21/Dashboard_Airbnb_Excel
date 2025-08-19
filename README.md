@@ -13,7 +13,7 @@ El principal objetico es crear de forma visual un perfil de *Hosts* (anfitriones
 ```
 📂 Dashboard_Airbnb_Excel
 ├──Data_Analysis_Dashboard/                      # Carpeta que contiene los análisis realizados y los dashboards finales
-│   └── Airbnb Madrid Completo_Dashboards.xlxs   # Archivo con los dashboards finales
+│   └── Airbnb Madrid Completo_Dashboards.xlsx   # Archivo con los dashboards finales
 │   └── Airbnb_Madrid_Analisis_Hosts.xlsx        # Análisis de los datos de los Hosts
 │   └── Airbnb_Madrid_Analisis_Listings.xlsx     # Análisis de los datosde los los Listings
 │   └── Airbnb Madrid Completo_V3.csv            # Archivo .csv de datos filtrados sobre el que hacer los análisis
@@ -24,8 +24,8 @@ El principal objetico es crear de forma visual un perfil de *Hosts* (anfitriones
 │       └── Airbnb_Madrod_Analisis_V2.xlsx
 │       └── Airbnb_Madrod_Analisis_V3.xlsx
 ├──Datasets/
-│   └── Datasets Airbnb Madrid.xlxs              # Datos brutos descargados de Inside Airbnb
-│   └── Dasets Ejemplo.xlsx                      # Datos brutos descargados de Inside Airbnb
+│   └── Datasets Airbnb Madrid.xlsx              # Datos brutos descargados de Inside Airbnb
+│   └── Datasets Ejemplo.xlsx                      # Datos brutos descargados de Inside Airbnb
 ├── Datos iniciales/
 │   └── listings.csv                             # Datos originales 
 │   └── listings (1).csv                         # Datos originales (1)
